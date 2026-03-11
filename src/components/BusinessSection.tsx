@@ -95,7 +95,7 @@ const services = [
     icon: Cpu, // 元に戻す場合: この行を削除
     tagline: "最新AIの力で、繰り返しを自動化。\n人の力を、より価値ある仕事へ。",
     points: [
-      "ChatGPT等の生成AI導入・社内活用の設計・定着支援",
+      "ChatGPT、Claude等のAI導入・社内活用の設計・定着支援",
       "業務フロー分析によるボトルネック特定と自動化提案",
       "AI活用人材の育成・ワークショップ・継続サポート",
     ],
@@ -105,6 +105,13 @@ const services = [
 export default function BusinessSection() {
   return (
     <section id="business" className="py-28 scroll-mt-28 relative overflow-hidden" style={{ background: "#e8eef5" }}>
+      {/* 背景画像 — 元に戻す場合: この img と3つの div を削除 */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/business-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none" style={{ opacity: 0.35 }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(232,238,245,0.45)" }} />
+      <div className="absolute inset-x-0 top-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, #e8eef5, transparent)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to top, #e8eef5, transparent)" }} />
+      {/* /背景画像 */}
       <MessageParticles />
       <div className="max-w-6xl mx-auto px-6">
 
@@ -190,61 +197,50 @@ export default function BusinessSection() {
         <div className="flex flex-col min-[1440px]:flex-row items-stretch gap-4 min-[1440px]:gap-0 mb-20">
 
           {/* Card 01 */}
-          <div className="flex-1 bg-white rounded-2xl min-[1440px]:rounded-r-none p-12 min-[1440px]:p-16 flex flex-col gap-6 shadow-md relative overflow-hidden">
-            {/* 上部アクセントライン */}
-            <div className="absolute top-0 left-0 right-0 h-1 z-20 pointer-events-none" style={{ background: "linear-gradient(to right, #E67376, #C9A84C)" }} />
-            {/* カード写真 */}
-            <GrayscaleReveal className="-mx-12 -mt-12 min-[1440px]:-mx-16 min-[1440px]:-mt-16 h-52 flex-shrink-0 relative">
+          <div className="flex-1 bg-white rounded-2xl p-5 pb-10 flex flex-col gap-5 relative border border-gray-200">
+            {/* 内側グレーライン */}
+            <div className="absolute inset-[5px] rounded-xl border border-gray-100 pointer-events-none z-10" />
+            {/* カード写真：角丸でカード内に収める */}
+            <GrayscaleReveal className="rounded-xl overflow-hidden h-56 flex-shrink-0 relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/business-photo.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" style={{ animation: "photoZoomIn 6s ease-out forwards, photoBreath 6s 6s ease-in-out infinite", transformOrigin: "center center" }} />
+              {/* タグバッジ：写真右上に重ねる */}
+              <span className="absolute top-3 right-3 text-xs font-bold tracking-widest text-white uppercase px-3 py-1 rounded-full" style={{ background: "linear-gradient(135deg, #E67376, #C9A84C)" }}>
+                {services[0].tag}
+              </span>
             </GrayscaleReveal>
-            {/* スマイル透かし（球体モチーフ） */}
-            <svg width="160" height="104" viewBox="0 0 160 104" fill="none" aria-hidden className="absolute bottom-4 right-4 opacity-[0.06] pointer-events-none">
-              <circle cx="44" cy="32" r="14" fill="#E67376" />
-              <circle cx="116" cy="32" r="14" fill="#E67376" />
-              <path d="M 12 56 Q 80 100 148 56" stroke="#E67376" strokeWidth="12" strokeLinecap="round" />
-            </svg>
-            {/* 番号 + タグ */}
-            <FadeIn delay={0}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="text-8xl font-bold text-gray-300 leading-none select-none">
-                    {services[0].number}
-                  </span>
-                  <span className="text-sm font-semibold tracking-widest text-[#E67376] uppercase border border-[#E67376] px-3 py-1 rounded-full">
-                    {services[0].tag}
-                  </span>
+
+            {/* コンテンツ */}
+            <div className="px-2 flex flex-col gap-4 flex-1">
+              {/* 番号 + タイトル */}
+              <FadeIn delay={0}>
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 leading-snug">
+                    {services[0].title}
+                  </h3>
+                  <Server className="w-5 h-5 text-[#E67376] opacity-50" strokeWidth={1.5} />
                 </div>
-                {/* ワンポイントアイコン — 元に戻す場合: この <Server> ブロックを削除 */}
-                <Server className="w-12 h-12 text-[#E67376] opacity-30" strokeWidth={1.5} />
-              </div>
-            </FadeIn>
+              </FadeIn>
 
-            {/* タイトル */}
-            <FadeIn delay={150}>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug whitespace-nowrap">
-                {services[0].title}
-              </h3>
-            </FadeIn>
+              {/* タグライン */}
+              <FadeIn delay={180}>
+                <p className="text-gray-500 text-base md:text-lg leading-8 whitespace-pre-line border-l-2 border-[#E67376] pl-4">
+                  {services[0].tagline}
+                </p>
+              </FadeIn>
 
-            {/* タグライン */}
-            <FadeIn delay={280}>
-              <p className="text-gray-500 text-lg md:text-xl leading-9 whitespace-pre-line border-l-2 border-[#E67376] pl-4">
-                {services[0].tagline}
-              </p>
-            </FadeIn>
-
-            {/* ポイント */}
-            <FadeIn delay={400} className="mt-auto">
-              <ul className="flex flex-col gap-3">
-                {services[0].points.map((p, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg md:text-xl text-gray-600 leading-8">
-                    <span className="mt-[8px] w-2 h-2 rounded-full bg-[#E67376] flex-shrink-0" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
+              {/* ポイント */}
+              <FadeIn delay={320} className="mt-auto">
+                <ul className="flex flex-col gap-2.5">
+                  {services[0].points.map((p, i) => (
+                    <li key={i} className="flex items-start gap-3 text-base md:text-lg text-gray-600 leading-7">
+                      <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-[#E67376] flex-shrink-0" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </FadeIn>
+            </div>
           </div>
 
           {/* & コネクター */}
@@ -265,61 +261,50 @@ export default function BusinessSection() {
           </FadeIn>
 
           {/* Card 02 */}
-          <div className="flex-1 bg-white rounded-2xl min-[1440px]:rounded-l-none p-12 min-[1440px]:p-16 flex flex-col gap-6 shadow-md relative overflow-hidden">
-            {/* 上部アクセントライン */}
-            <div className="absolute top-0 left-0 right-0 h-1 z-20 pointer-events-none" style={{ background: "linear-gradient(to right, #C9A84C, #E67376)" }} />
-            {/* カード写真 */}
-            <GrayscaleReveal className="-mx-12 -mt-12 min-[1440px]:-mx-16 min-[1440px]:-mt-16 h-52 flex-shrink-0 relative">
+          <div className="flex-1 bg-white rounded-2xl p-5 pb-10 flex flex-col gap-5 relative border border-gray-200">
+            {/* 内側グレーライン */}
+            <div className="absolute inset-[5px] rounded-xl border border-gray-100 pointer-events-none z-10" />
+            {/* カード写真：角丸でカード内に収める */}
+            <GrayscaleReveal className="rounded-xl overflow-hidden h-56 flex-shrink-0 relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/business-photo2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" style={{ animation: "photoZoomIn 6s ease-out forwards, photoBreath 6s 6s ease-in-out infinite", transformOrigin: "center center" }} />
+              {/* タグバッジ：写真右上に重ねる */}
+              <span className="absolute top-3 right-3 text-xs font-bold tracking-widest text-white uppercase px-3 py-1 rounded-full" style={{ background: "linear-gradient(135deg, #C9A84C, #E67376)" }}>
+                {services[1].tag}
+              </span>
             </GrayscaleReveal>
-            {/* スマイル透かし（球体モチーフ） */}
-            <svg width="160" height="104" viewBox="0 0 160 104" fill="none" aria-hidden className="absolute bottom-4 right-4 opacity-[0.06] pointer-events-none">
-              <circle cx="44" cy="32" r="14" fill="#E67376" />
-              <circle cx="116" cy="32" r="14" fill="#E67376" />
-              <path d="M 12 56 Q 80 100 148 56" stroke="#E67376" strokeWidth="12" strokeLinecap="round" />
-            </svg>
-            {/* 番号 + タグ */}
-            <FadeIn delay={300}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="text-8xl font-bold text-gray-300 leading-none select-none">
-                    {services[1].number}
-                  </span>
-                  <span className="text-sm font-semibold tracking-widest text-[#E67376] uppercase border border-[#E67376] px-3 py-1 rounded-full">
-                    {services[1].tag}
-                  </span>
+
+            {/* コンテンツ */}
+            <div className="px-2 flex flex-col gap-4 flex-1">
+              {/* 番号 + タイトル */}
+              <FadeIn delay={300}>
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 leading-snug">
+                    {services[1].title}
+                  </h3>
+                  <Cpu className="w-5 h-5 text-[#E67376] opacity-50" strokeWidth={1.5} />
                 </div>
-                {/* ワンポイントアイコン — 元に戻す場合: この <Cpu> ブロックを削除 */}
-                <Cpu className="w-12 h-12 text-[#E67376] opacity-30" strokeWidth={1.5} />
-              </div>
-            </FadeIn>
+              </FadeIn>
 
-            {/* タイトル */}
-            <FadeIn delay={450}>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug whitespace-nowrap">
-                {services[1].title}
-              </h3>
-            </FadeIn>
+              {/* タグライン */}
+              <FadeIn delay={480}>
+                <p className="text-gray-500 text-base md:text-lg leading-8 whitespace-pre-line border-l-2 border-[#E67376] pl-4">
+                  {services[1].tagline}
+                </p>
+              </FadeIn>
 
-            {/* タグライン */}
-            <FadeIn delay={580}>
-              <p className="text-gray-500 text-lg md:text-xl leading-9 whitespace-pre-line border-l-2 border-[#E67376] pl-4">
-                {services[1].tagline}
-              </p>
-            </FadeIn>
-
-            {/* ポイント */}
-            <FadeIn delay={700} className="mt-auto">
-              <ul className="flex flex-col gap-3">
-                {services[1].points.map((p, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg md:text-xl text-gray-600 leading-8">
-                    <span className="mt-[8px] w-2 h-2 rounded-full bg-[#E67376] flex-shrink-0" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
+              {/* ポイント */}
+              <FadeIn delay={620} className="mt-auto">
+                <ul className="flex flex-col gap-2.5">
+                  {services[1].points.map((p, i) => (
+                    <li key={i} className="flex items-start gap-3 text-base md:text-lg text-gray-600 leading-7">
+                      <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-[#E67376] flex-shrink-0" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </FadeIn>
+            </div>
           </div>
         </div>
 

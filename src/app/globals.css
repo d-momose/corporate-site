@@ -139,3 +139,7 @@ body {
 .nav-underline-dark::after {
   background-color: #111827;
 }
+.nav-underline.nav-active::after {
+  width: calc(100% - 24px);
+  left: 12px;
+}

@@ -42,7 +42,7 @@ const news: { date: string; category: Category; title: string }[] = [
 
 export default function NewsSection() {
   return (
-    <section id="news" className="py-24 bg-[#fff8f8] relative scroll-mt-28">
+    <section id="news" className="py-24 bg-[#eef4fb] relative scroll-mt-28">
       <div className="max-w-5xl mx-auto px-6">
 
         {/* セクションタイトル */}

@@ -268,8 +268,11 @@ export default function HeroCanvas() {
       scrub: 0.8,
       onLeaveBack() {
         hideOverlay();
+        mount.style.zIndex = "5";
       },
       onUpdate(self) {
+        // スクロール中はオーバーレイ(z:40)より上、静止時はヒーローテキスト(z:10)より下
+        mount.style.zIndex = self.progress > 0.01 ? "55" : "5";
         // スクロール量に連動して球体中心を移動
         sphereCenter.lerpVectors(startPos, endPos, self.progress);
 
@@ -340,7 +343,7 @@ export default function HeroCanvas() {
         width: "100vw",
         height: "100vh",
         pointerEvents: "none",
-        zIndex: 50,
+        zIndex: 5,
         opacity: 0,
         animation: "shurikenIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         animationDelay: "4.8s",

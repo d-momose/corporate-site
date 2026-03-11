@@ -99,7 +99,7 @@ export default function MessageSection() {
           <FadeIn delay={150} className="w-full min-[1440px]:w-2/5 flex-shrink-0">
             <div
               ref={imageContainerRef}
-              className="relative w-full aspect-[3/4] max-w-sm mx-auto min-[1440px]:mx-0 overflow-hidden rounded-2xl shadow-lg"
+              className="relative w-full aspect-[3/4] max-w-sm mx-auto min-[1440px]:mx-0 overflow-hidden rounded-2xl"
               style={{ filter: "grayscale(1)", transition: "filter 0.15s ease-out" }}
             >
               <Image
@@ -109,18 +109,20 @@ export default function MessageSection() {
                 className="object-cover object-top"
                 priority
               />
-            </div>
-            {/* キャプション */}
-            <div className="mt-4 text-center max-w-sm mx-auto min-[1440px]:mx-0">
-              <p className="text-sm text-gray-400 tracking-widest mb-1">
-                Delight株式会社代表
-              </p>
-              <p
-                className="text-3xl text-gray-800"
-                style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}
+              {/* キャプション：画像下部にオーバーレイ */}
+              <div className="absolute bottom-0 left-0 right-0 px-6 pb-6 pt-16"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)" }}
               >
-                山中 翔太
-              </p>
+                <p className="text-sm text-white/80 tracking-widest mb-1">
+                  Delight株式会社代表
+                </p>
+                <p
+                  className="text-3xl text-white"
+                  style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}
+                >
+                  山中 翔太
+                </p>
+              </div>
             </div>
           </FadeIn>
 
@@ -134,8 +136,16 @@ export default function MessageSection() {
               </h3>
             </FadeIn>
 
+            <FadeIn delay={370}>
+              <div className="flex items-center gap-3 my-1">
+                <div className="h-[1px] w-8 bg-[#E67376]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#E67376]" />
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-[#E67376]/50 to-transparent" />
+              </div>
+            </FadeIn>
+
             <FadeIn delay={400}>
-              <p>
+              <p >
                 この会社は、誰のためにあるのか。<br />
                 その答えは、経営者のためでも、株主のためでもありません。<br />
                 ここで働く一人ひとりの仲間と、その先にいるお客様の「喜び」のためにあります。
@@ -143,7 +153,7 @@ export default function MessageSection() {
             </FadeIn>
 
             <FadeIn delay={500}>
-              <p>
+              <p >
                 かつて私が見てきたのは、努力や成果が正当に報われず、働く人の人生が少しも豊かにならないという現実でした。<br />
                 どれだけ素晴らしいスキルを持っていても、その「ヒト」自身が輝けなければ、本当の価値は生まれない。その痛切な想いが、私の原点です。
               </p>
@@ -157,8 +167,16 @@ export default function MessageSection() {
               </p>
             </FadeIn>
 
+            <FadeIn delay={670}>
+              <div className="flex items-center gap-3 my-1">
+                <div className="h-[1px] w-8 bg-[#E67376]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#E67376]" />
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-[#E67376]/50 to-transparent" />
+              </div>
+            </FadeIn>
+
             <FadeIn delay={700}>
-              <p>
+              <p >
                 この信念を形にしたのが、当社です。<br />
                 私たちが掲げる「高還元」「休日増」「教育投資」。<br />
                 これらは福利厚生という言葉では足りません。<br />
@@ -167,7 +185,7 @@ export default function MessageSection() {
             </FadeIn>
 
             <FadeIn delay={800}>
-              <p>
+              <p >
                 メンバーの笑顔が、お客様の笑顔につながる。<br />
                 私たちは、そんなシンプルな真実を、どこまでもまっすぐに追い求めます。<br />
                 この『喜びの連鎖』を、当社から巻き起こしたいのです。
@@ -175,7 +193,7 @@ export default function MessageSection() {
             </FadeIn>
 
             <FadeIn delay={900}>
-              <p>
+              <p >
                 喜びの連鎖が生み出すエネルギーこそが、お客さまの最も困難な課題を解決する力となり、しいては良い社会を創造する力になると、私たちは信じています。
               </p>
             </FadeIn>

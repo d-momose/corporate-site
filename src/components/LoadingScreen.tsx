@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const FULL_TEXT = "笑顔は、次の笑顔を生む。";
+const FULL_TEXT = "喜びが、次の喜びを生む。";
 
 const SKIP_PATHS = ["/privacy"];
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -18,17 +19,44 @@ const ctaItems = [
   { label: "ENTRYはこちら", href: "/entry" },
 ];
 
+// セクションIDとナビのhrefを紐付け
+const sectionIds = ["business", "strength", "message", "news", "company"];
+
 export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLight, setIsLight] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [headerReady, setHeaderReady] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const scrollTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setHeaderReady(true), 800);
     return () => clearTimeout(t);
   }, []);
+
+  // アクティブセクション検知（スクロール位置ベース）
+  useEffect(() => {
+    if (pathname !== "/") { setActiveSection(null); return; }
+
+    const updateActive = () => {
+      const headerH = 100;
+      let current: string | null = null;
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top <= headerH) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", updateActive, { passive: true });
+    updateActive();
+    return () => window.removeEventListener("scroll", updateActive);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -48,7 +76,8 @@ export default function Header() {
 
       if (scrollTimer.current) clearTimeout(scrollTimer.current);
       setIsVisible(true);
-      if (scrollY >= 10) {
+      // isLight（コンテンツエリア滞在中）は隠さない
+      if (scrollY >= 10 && !light) {
         scrollTimer.current = setTimeout(() => setIsVisible(false), 1000);
       }
     };
@@ -89,15 +118,26 @@ export default function Header() {
 
         {/* PC用ナビ */}
         <nav className="hidden min-[1440px]:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`nav-underline text-base font-bold px-3 py-2 whitespace-nowrap transition-colors duration-300 ${isLight ? "text-gray-900 nav-underline-dark" : "text-white"}`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const sectionId = item.href.startsWith("/#") ? item.href.slice(2) : null;
+            const isActive = sectionId ? activeSection === sectionId : pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`nav-underline relative text-base font-bold px-3 py-2 whitespace-nowrap transition-colors duration-300 ${isLight ? "text-gray-900 nav-underline-dark" : "text-white"}`}
+              >
+                {item.label}
+                <span
+                  className="absolute bottom-1 left-3 right-3 h-[1.5px] transition-transform duration-300 origin-left"
+                  style={{
+                    backgroundColor: isLight ? "#111827" : "white",
+                    transform: isActive ? "scaleX(1)" : "scaleX(0)",
+                  }}
+                />
+              </Link>
+            );
+          })}
 
           <div className={`w-[1px] h-4 mx-2 transition-colors duration-300 ${isLight ? "bg-gray-900/20" : "bg-white/20"}`} />
 
@@ -138,8 +178,10 @@ export default function Header() {
       >
         {/* ロゴ＋×ボタン */}
         <div className="px-4 pt-7 pb-6 border-b border-white/10 flex items-center justify-between">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Delight" className="h-7 brightness-0 invert" />
+          <Link href="/" onClick={() => setIsMenuOpen(false)}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Delight" className="h-7 brightness-0 invert" />
+          </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="p-1 text-white hover:text-[#E67376] transition-colors"
@@ -167,9 +209,9 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-white text-xl font-bold tracking-wide hover:text-[#E67376] transition-colors duration-200"
+              className="text-base font-bold px-8 py-2 rounded-full whitespace-nowrap inline-flex items-center justify-center gap-1 bg-white text-gray-900 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
-              {item.label}
+              {item.label} →
             </Link>
           ))}
         </nav>

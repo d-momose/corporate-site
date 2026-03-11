@@ -254,18 +254,16 @@ export default function EntryApplyPage() {
   return (
     <main>
       {/* ─── ヒーロー ─── */}
-      <section
-        className="relative pt-36 pb-20"
-        style={{
-          background: "linear-gradient(160deg, #1a1a2e 0%, #2d1f2f 50%, #1a1a2e 100%)",
-          backgroundImage: "radial-gradient(rgba(230,115,118,0.06) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(230,115,118,0.10) 0%, transparent 70%)" }}
+      <section className="relative pt-36 pb-20 overflow-hidden">
+        {/* 背景画像 */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/entry-apply-hero.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
         />
+        {/* 暗めのオーバーレイ */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(20,20,30,0.55)" }} />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ShurikenIn>
             <p className="text-xs font-semibold tracking-[0.3em] text-[#E67376] uppercase mb-3">

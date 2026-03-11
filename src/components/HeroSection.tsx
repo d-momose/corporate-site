@@ -64,8 +64,6 @@ export default function HeroSection() {
             }}
           />
         ))}
-        {/* 下端を白にフェード */}
-        <div className="absolute bottom-0 left-0 w-full h-2/5 bg-gradient-to-t from-white to-transparent" />
       </div>
 
       {/* 左：テキストエリア */}
@@ -74,8 +72,8 @@ export default function HeroSection() {
         {/* 元に戻す場合: style を削除して font-bold を戻す */}
         <h1 className="text-white leading-tight mb-3"
           style={{ fontFamily: 'var(--font-kaisei-tokumin), "ヒラギノ角ゴ ProN W6", sans-serif', fontWeight: 800, fontSize: "clamp(62px, 16.5vw, 86px)" }}>
-          <span className="shuriken-in" style={{ animationDelay: "3.85s", whiteSpace: "nowrap" }}>笑顔は、</span>
-          <span className="shuriken-in" style={{ animationDelay: "4.05s", whiteSpace: "nowrap" }}>次の笑顔を</span>
+          <span className="shuriken-in" style={{ animationDelay: "3.85s", whiteSpace: "nowrap" }}>喜びが、</span>
+          <span className="shuriken-in" style={{ animationDelay: "4.05s", whiteSpace: "nowrap" }}>次の喜びを</span>
           <span className="shuriken-in" style={{ animationDelay: "4.25s", whiteSpace: "nowrap" }}>生む。</span>
         </h1>
 
@@ -99,6 +97,16 @@ export default function HeroSection() {
           <span className="text-sm tracking-widest text-gray-400 uppercase">Scroll</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent animate-pulse" />
         </div>
+      </div>
+
+      {/* 波線：画像の上に重ねて下から色が入る */}
+      <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 90, zIndex: 3, overflow: "hidden" }}>
+        <svg style={{ position: "absolute", bottom: 0, left: 0, width: "200%", height: "100%", opacity: 0.5, animation: "waveScroll 12s linear infinite" }} viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path d="M0,45 C120,65 240,65 360,45 C480,25 600,25 720,45 C840,65 960,65 1080,45 C1200,25 1320,25 1440,45 L1440,90 L0,90 Z" fill="#e8eef5" />
+        </svg>
+        <svg style={{ position: "absolute", bottom: 0, left: 0, width: "200%", height: "100%", animation: "waveScroll 8s linear infinite" }} viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path d="M0,45 C120,20 240,20 360,45 C480,70 600,70 720,45 C840,20 960,20 1080,45 C1200,70 1320,70 1440,45 L1440,90 L0,90 Z" fill="#e8eef5" />
+        </svg>
       </div>
 
       {/* スライドインジケーター（右下） */}

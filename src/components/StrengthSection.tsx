@@ -59,6 +59,8 @@ const strengths = [
     description:
       "「企画」「開発」「運用」で担当がバラバラ…なんてことはありません。最初のアイディア出しから完成後のサポートまで、同じチームが責任をもって担当します。だから話が早く、ブレのないシステムづくりが可能です。",
     icon: Users,
+    iconImage: "/icon-team.png",
+    iconFilter: "hue-rotate(240deg) saturate(2) brightness(1.1)",
     gradient: "linear-gradient(135deg, #c04050 0%, #E67376 50%, #f4a8a8 100%)",
     accentColor: "#E67376",
     floatDelay: "0s",
@@ -69,6 +71,8 @@ const strengths = [
     description:
       "私たちは、言われたものを作るだけの業者ではありません。お客様の成功のために「それは本当に最適か？」を共に考え、時には率直な意見もお伝えする誠実なパートナーです。",
     icon: Heart,
+    iconImage: "/icon-partner.png",
+    iconFilter: "hue-rotate(300deg) saturate(2) brightness(1.1)",
     gradient: "linear-gradient(135deg, #92400e 0%, #d97706 55%, #fbbf24 100%)",
     accentColor: "#d97706",
     floatDelay: "1.4s",
@@ -79,6 +83,8 @@ const strengths = [
     description:
       "開発に必要な人材の手配から、複雑なプロジェクト全体の管理まで、すべてお引き受けします。お客様は、一番大切なご自身のビジネスに集中していただけます。",
     icon: ClipboardList,
+    iconImage: "/icon-task.png",
+    iconFilter: "hue-rotate(120deg) saturate(2) brightness(1.1)",
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #7dd3fc 100%)",
     accentColor: "#3b82f6",
     floatDelay: "2.8s",
@@ -148,18 +154,28 @@ function StrengthCircle({
             {/* スマイル装飾（球体モチーフ） */}
             <div className="relative z-10 mb-2" style={fade(0)}>
               <svg width="52" height="34" viewBox="0 0 52 34" fill="none" aria-hidden>
-                <circle cx="14" cy="10" r="4" fill="#1f2937" opacity="0.45" />
-                <circle cx="38" cy="10" r="4" fill="#1f2937" opacity="0.45" />
-                <path d="M 6 20 Q 26 33 46 20" stroke="#1f2937" strokeWidth="3.5" strokeLinecap="round" fill="none" opacity="0.35" />
+                <circle cx="14" cy="10" r="4" fill="#d97706" opacity="0.7" />
+                <circle cx="38" cy="10" r="4" fill="#d97706" opacity="0.7" />
+                <path d="M 6 20 Q 26 33 46 20" stroke="#d97706" strokeWidth="3.5" strokeLinecap="round" fill="none" opacity="0.6" />
               </svg>
             </div>
 
             {/* ワンポイントアイコン */}
             <div className="mb-4 relative z-10" style={fade(120)}>
-              <item.icon
-                className="w-10 h-10 opacity-60 mx-auto text-gray-900"
-                strokeWidth={1.5}
-              />
+              {item.iconImage ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={item.iconImage}
+                  alt=""
+                  className="w-12 h-12 mx-auto object-contain"
+                  style={{ filter: item.iconFilter, opacity: 0.85, mixBlendMode: "multiply" }}
+                />
+              ) : (
+                <item.icon
+                  className="w-10 h-10 opacity-60 mx-auto text-gray-900"
+                  strokeWidth={1.5}
+                />
+              )}
             </div>
 
             {/* 区切り飾り */}
@@ -223,7 +239,7 @@ export default function StrengthSection() {
         src="/strength-bg.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
-        style={{ opacity: 0.35 }}
+        style={{ opacity: 0.75 }}
       />
       {/* カラーオーバーレイ：写真とセクション色をブレンド */}
       <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(205,210,215,0.55)" }} />

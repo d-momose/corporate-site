@@ -15,15 +15,14 @@ export default function Home() {
       <HeroCanvasLoader />
       <SphereOverlay />
       <HeroSection />
-      <WaveDivider topColor="#ffffff" bottomColor="#e8eef5" />
       <BusinessSection />
       <WaveDivider topColor="#e8eef5" bottomColor="#CDD2D7" />
       <StrengthSection />
       <WaveDivider topColor="#CDD2D7" bottomColor="#ffffff" />
       <MessageSection />
-      <WaveDivider topColor="#ffffff" bottomColor="#fff8f8" />
+      <WaveDivider topColor="#ffffff" bottomColor="#eef4fb" />
       <NewsSection />
-      <WaveDivider topColor="#fff8f8" bottomColor="#0f172a" />
+      <WaveDivider topColor="#eef4fb" bottomColor="#0f172a" />
       <CompanySection />
     </main>
   );
