@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:statementmovie.tyo.co.jp)",
+      "WebFetch(domain:en-gage.net)",
+      "Bash(identify:*)"
+    ]
+  }
+}
