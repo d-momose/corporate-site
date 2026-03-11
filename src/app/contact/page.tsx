@@ -126,10 +126,26 @@ export default function ContactPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleSubmit = () => {
-    // TODO: フォーム送信処理（APIエンドポイントやメールサービスと連携）
-    setStep("complete");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStep("complete");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      setSubmitError("送信に失敗しました。時間をおいて再度お試しください。");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleBack = () => {
@@ -401,14 +417,18 @@ export default function ContactPage() {
                   >
                     ← 入力に戻る
                   </button>
+                  {submitError && (
+                    <p className="text-xs text-red-500 text-center">{submitError}</p>
+                  )}
                   <button
                     onClick={handleSubmit}
-                    className="flex-1 py-4 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-[0.99]"
+                    disabled={submitting}
+                    className="flex-1 py-4 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-[0.99] disabled:opacity-60"
                     style={{
                       background: "linear-gradient(135deg, #c04050 0%, #E67376 50%, #f4a8a8 100%)",
                     }}
                   >
-                    送信する
+                    {submitting ? "送信中…" : "送信する"}
                   </button>
                 </div>
               </div>

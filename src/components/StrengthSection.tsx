@@ -171,7 +171,7 @@ function StrengthCircle({
 
             {/* タイトル */}
             <h3
-              className="text-xl font-bold mb-4 relative z-10 whitespace-pre-line leading-[2.2]"
+              className="text-2xl md:text-3xl font-bold mb-4 relative z-10 whitespace-pre-line leading-[2.2]"
               style={fade(400)}
             >
               <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "2px 8px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>

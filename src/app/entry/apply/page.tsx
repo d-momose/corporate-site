@@ -200,10 +200,26 @@ export default function EntryApplyPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleSubmit = () => {
-    // TODO: フォーム送信処理（APIエンドポイントやメールサービスと連携）
-    setStep("complete");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/entry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStep("complete");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      setSubmitError("送信に失敗しました。時間をおいて再度お試しください。");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleBack = () => {
@@ -248,7 +264,7 @@ export default function EntryApplyPage() {
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(230,115,118,0.14) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(230,115,118,0.10) 0%, transparent 70%)" }}
         />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ShurikenIn>
@@ -696,12 +712,16 @@ export default function EntryApplyPage() {
                   >
                     ← 入力に戻る
                   </button>
+                  {submitError && (
+                    <p className="text-xs text-red-500 text-center">{submitError}</p>
+                  )}
                   <button
                     onClick={handleSubmit}
-                    className="flex-1 py-4 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-[0.99]"
+                    disabled={submitting}
+                    className="flex-1 py-4 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-[0.99] disabled:opacity-60"
                     style={{ background: "linear-gradient(135deg, #E67376, #C9A84C)" }}
                   >
-                    エントリーを送信する
+                    {submitting ? "送信中…" : "エントリーを送信する"}
                   </button>
                 </div>
               </div>

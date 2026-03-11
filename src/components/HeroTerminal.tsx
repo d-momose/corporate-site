@@ -86,12 +86,10 @@ export default function HeroTerminal() {
             {line.text || "\u00a0"}
           </div>
         ))}
-        {revealed < LINES.length && (
-          <span
-            className="inline-block w-[7px] h-[14px] align-middle"
-            style={{ background: cursor ? "#4ade80" : "transparent" }}
-          />
-        )}
+        <span
+          className="inline-block w-[7px] h-[14px] align-middle"
+          style={{ background: revealed < LINES.length && cursor ? "#4ade80" : "transparent" }}
+        />
       </div>
     </div>
   );

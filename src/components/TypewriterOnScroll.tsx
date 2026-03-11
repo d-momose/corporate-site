@@ -41,7 +41,7 @@ export default function TypewriterOnScroll({
         setTyped(text.slice(0, i));
         if (i >= text.length) {
           clearInterval(iv);
-          setTimeout(() => setShowCursor(false), 800);
+          setShowCursor(false);
         }
       }, speed);
       return () => clearInterval(iv);
@@ -50,10 +50,10 @@ export default function TypewriterOnScroll({
   }, [started, text, speed, delay]);
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={className} style={{ position: "relative" }}>
       {started ? typed : <span className="invisible">{text}</span>}
       {showCursor && (
-        <span style={{ animation: "cursorBlink 0.7s step-end infinite" }}>|</span>
+        <span style={{ position: "absolute", animation: "cursorBlink 0.7s step-end infinite" }}>|</span>
       )}
     </span>
   );

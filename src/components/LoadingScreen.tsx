@@ -85,14 +85,12 @@ export default function LoadingScreen() {
           style={{ fontFamily: 'var(--font-kaisei-tokumin), "ヒラギノ角ゴ ProN W6", sans-serif', fontWeight: 800 }}
         >
           {typed}
-          {showCursor && (
-            <span
-              className="inline-block ml-0.5 align-baseline"
-              style={{ animation: "cursorBlink 0.7s step-end infinite" }}
-            >
-              |
-            </span>
-          )}
+          <span
+            className="inline-block ml-0.5 align-baseline"
+            style={{ animation: "cursorBlink 0.7s step-end infinite", visibility: showCursor ? "visible" : "hidden" }}
+          >
+            |
+          </span>
         </p>
       </div>
     </div>
