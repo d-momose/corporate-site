@@ -231,7 +231,7 @@ export default function EntryPage() {
               style={{ fontFamily: "var(--font-kaisei-tokumin)", fontWeight: 800 }}
             >
               エンジニアが、<br />
-              <span style={{ color: "hsl(22, 100%, 65%)" }}>主役</span>の会社。
+              <span style={{ color: "#C9A84C" }}>主役</span>の会社。
             </h2>
           </FadeIn>
           <FadeIn delay={300}>

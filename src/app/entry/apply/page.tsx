@@ -763,19 +763,6 @@ export default function EntryApplyPage() {
         </div>
       </section>
 
-      {/* ─── フッターバー ─── */}
-      <footer
-        className="py-10 text-center"
-        style={{
-          background: "linear-gradient(160deg, #1a1a2e 0%, #2d1f2f 100%)",
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      >
-        <p className="text-xs text-gray-600 tracking-widest">
-          © {new Date().getFullYear()} Delight株式会社. All rights reserved.
-        </p>
-      </footer>
     </main>
   );
 }

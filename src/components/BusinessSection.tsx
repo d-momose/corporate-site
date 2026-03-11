@@ -160,7 +160,7 @@ export default function BusinessSection() {
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                 <TypewriterOnScroll text="同じゴールを目指す" speed={60} />
                 <br />
-                <span style={{ color: "hsl(22, 100%, 65%)" }}>
+                <span style={{ color: "#C9A84C" }}>
                   <TypewriterOnScroll text="最高のパートナー" speed={60} delay={700} />
                 </span>
                 <TypewriterOnScroll text="で" speed={60} delay={1180} />
