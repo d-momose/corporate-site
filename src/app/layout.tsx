@@ -26,7 +26,7 @@ const kaiseiTokumin = Kaisei_Tokumin({
 
 
 export const metadata: Metadata = {
-  title: "Delight株式会社",
+  title: "Delight株式会社 | 喜びが、次の喜びを生む。",
   description: "一人ひとりのエンジニアが持つ無限の可能性を信じ、その才能が最大限に輝くための舞台を創り出す企業です。",
 };
 

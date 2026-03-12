@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import ShurikenIn from "@/components/ShurikenIn";
 import { Mail } from "lucide-react";
@@ -158,11 +159,12 @@ export default function ContactPage() {
       {/* ─── ヒーロー ─── */}
       <section className="relative pt-36 pb-20 overflow-hidden">
         {/* 背景画像 */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/contact-hero.jpg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+          fill
+          priority
+          className="object-cover object-center pointer-events-none select-none"
         />
         {/* 暗めのオーバーレイ */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(20,20,30,0.55)" }} />
@@ -201,7 +203,7 @@ export default function ContactPage() {
             <FadeIn>
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
                 <h2 className="text-xl font-bold text-gray-900 mb-1">
-                  フォームでのお問い合わせ
+                  お問い合わせフォーム
                 </h2>
                 <p className="text-sm text-gray-500 mb-8">
                   <span className="text-[#E67376]">*</span> は必須項目です

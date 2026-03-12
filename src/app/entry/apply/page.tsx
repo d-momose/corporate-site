@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import ShurikenIn from "@/components/ShurikenIn";
 
@@ -256,11 +257,12 @@ export default function EntryApplyPage() {
       {/* ─── ヒーロー ─── */}
       <section className="relative pt-36 pb-20 overflow-hidden">
         {/* 背景画像 */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/entry-apply-hero.jpg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+          fill
+          priority
+          className="object-cover object-center pointer-events-none select-none"
         />
         {/* 暗めのオーバーレイ */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(20,20,30,0.55)" }} />

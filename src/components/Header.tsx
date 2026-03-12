@@ -175,6 +175,7 @@ export default function Header() {
           backdropFilter: "blur(6px)",
           transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
         }}
+        onClick={() => setIsMenuOpen(false)}
       >
         {/* ロゴ＋×ボタン */}
         <div className="px-4 pt-7 pb-6 border-b border-white/10 flex items-center justify-between">
@@ -198,7 +199,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-white text-xl font-bold tracking-wide hover:text-[#E67376] transition-colors duration-200"
+              className="nav-underline-mobile text-white text-xl font-bold tracking-wide transition-colors duration-200"
             >
               {item.label}
             </Link>

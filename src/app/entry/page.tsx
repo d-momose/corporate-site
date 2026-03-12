@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import ShurikenIn from "@/components/ShurikenIn";
 
@@ -109,11 +110,13 @@ export default function EntryPage() {
       {/* ── Hero：画像背景 ── */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         {/* 背景画像 */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/entry-hero.jpg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 10%", animation: "photoZoomIn 6s ease-out forwards", transformOrigin: "center center" }}
+          fill
+          priority
+          className="object-cover pointer-events-none select-none"
+          style={{ objectPosition: "center 10%", animation: "photoZoomIn 6s ease-out forwards", transformOrigin: "center center" }}
         />
         {/* グラデーションオーバーレイ：下から暗く */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.05) 100%)" }} />

@@ -197,7 +197,7 @@ export default function BusinessSection() {
         <div className="flex flex-col min-[1440px]:flex-row items-stretch gap-4 min-[1440px]:gap-0 mb-20">
 
           {/* Card 01 */}
-          <div className="flex-1 bg-white rounded-2xl p-5 pb-10 flex flex-col gap-5 relative border border-gray-200">
+          <div className="w-full max-w-2xl mx-auto min-[1440px]:flex-1 min-[1440px]:max-w-none min-[1440px]:mx-0 bg-white rounded-2xl p-5 pb-10 flex flex-col gap-5 relative border border-gray-200">
             {/* 内側グレーライン */}
             <div className="absolute inset-[5px] rounded-xl border border-gray-100 pointer-events-none z-10" />
             {/* カード写真：角丸でカード内に収める */}
@@ -261,7 +261,7 @@ export default function BusinessSection() {
           </FadeIn>
 
           {/* Card 02 */}
-          <div className="flex-1 bg-white rounded-2xl p-5 pb-10 flex flex-col gap-5 relative border border-gray-200">
+          <div className="w-full max-w-2xl mx-auto min-[1440px]:flex-1 min-[1440px]:max-w-none min-[1440px]:mx-0 bg-white rounded-2xl p-5 pb-10 flex flex-col gap-5 relative border border-gray-200">
             {/* 内側グレーライン */}
             <div className="absolute inset-[5px] rounded-xl border border-gray-100 pointer-events-none z-10" />
             {/* カード写真：角丸でカード内に収める */}

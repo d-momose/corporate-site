@@ -19,8 +19,7 @@ export default function ScrollToTopButton() {
       aria-label="ページ先頭へ戻る"
       className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300"
       style={{
-        background: "linear-gradient(135deg, #c04050 0%, #E67376 100%)",
-        boxShadow: "0 4px 20px rgba(230,115,118,0.45)",
+        background: "#000",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0) scale(1)" : "translateY(16px) scale(0.85)",
         pointerEvents: visible ? "auto" : "none",
