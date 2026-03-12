@@ -103,6 +103,51 @@ const jobDetails = [
   { label: "雇用形態", value: "正社員" },
 ];
 
+function FloatingCTA() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const target = document.getElementById("entry-cta-buttons");
+    if (!target) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(!entry.isIntersecting),
+      { threshold: 0.5 }
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      className="fixed bottom-6 z-50 transition-all duration-300 rounded-2xl px-6 py-4"
+      style={{
+        left: "50%",
+        opacity: visible ? 1 : 0,
+        transform: `translateX(-50%) translateY(${visible ? "0" : "16px"})`,
+        pointerEvents: visible ? "auto" : "none",
+        background: "rgba(200,200,200,0.85)",
+        backdropFilter: "blur(10px)",
+      }}
+    >
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Link
+          href="/entry/apply"
+          className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
+          style={{ background: "linear-gradient(135deg, #E67376, #C9A84C)" }}
+        >
+          今すぐエントリーする →
+        </Link>
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-lg text-gray-700 bg-gray-100 transition-all duration-300 hover:scale-105 hover:bg-gray-200 whitespace-nowrap"
+        >
+          まずは相談する
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export default function EntryPage() {
   return (
     <main className="min-h-screen bg-white">
@@ -359,7 +404,7 @@ export default function EntryPage() {
               まずはお気軽にエントリーください。<br />
               選考フローや待遇についても、丁寧にご説明します。
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div id="entry-cta-buttons" className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/entry/apply"
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -378,6 +423,7 @@ export default function EntryPage() {
         </div>
       </section>
 
+      <FloatingCTA />
     </main>
   );
 }
