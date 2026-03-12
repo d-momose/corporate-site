@@ -160,8 +160,8 @@ export default function EntryPage() {
           </FadeIn>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {highlights.map((h, i) => (
-              <FadeIn key={h.label} delay={i * 100}>
-                <div className="rounded-2xl p-8 text-center bg-[#fdf8f8] border border-[#f0e0e0] hover:border-[#E67376] transition-colors duration-300">
+              <FadeIn key={h.label} delay={i * 100} className="h-full">
+                <div className="rounded-2xl p-8 text-center bg-[#fdf8f8] border border-[#f0e0e0] hover:border-[#E67376] transition-colors duration-300 h-full flex flex-col justify-center">
                   <p
                     className="text-4xl md:text-5xl font-bold mb-2 leading-none"
                     style={{ fontFamily: "var(--font-kaisei-tokumin)", fontWeight: 800, background: "linear-gradient(135deg, #E67376, #C9A84C)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
