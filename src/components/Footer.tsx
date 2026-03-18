@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-slate-900 border-t border-white/10 py-6 text-center">
+    <footer className="border-t border-white/10 py-6 text-center" style={{ background: "#2d0a0b" }}>
       <div className="flex items-center justify-center gap-6 mb-3">
         <Link
           href="/privacy"

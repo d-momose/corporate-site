@@ -156,7 +156,7 @@ export default function EntryPage() {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         {/* 背景画像 */}
         <Image
-          src="/entry-hero.jpg"
+          src="/entry-hero-2.jpg"
           alt=""
           fill
           priority

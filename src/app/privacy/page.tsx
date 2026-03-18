@@ -162,19 +162,6 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      {/* ─── フッター ─── */}
-      <footer
-        className="bg-gray-950 py-10 text-center"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      >
-        <p className="text-xs text-gray-600 tracking-widest">
-          © {new Date().getFullYear()} Delight株式会社. All rights reserved.
-        </p>
-      </footer>
     </main>
   );
 }

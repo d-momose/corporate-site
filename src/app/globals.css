@@ -117,6 +117,19 @@ body {
   50%      { transform: scale(1.10); }
 }
 
+@keyframes blobBounceIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes blobMorph {
+  0%   { border-radius: 55% 45% 44% 56% / 56% 44% 56% 44%; }
+  25%  { border-radius: 44% 56% 56% 44% / 44% 56% 44% 56%; }
+  50%  { border-radius: 56% 44% 45% 55% / 55% 45% 56% 44%; }
+  75%  { border-radius: 45% 55% 44% 56% / 44% 56% 55% 45%; }
+  100% { border-radius: 55% 45% 44% 56% / 56% 44% 56% 44%; }
+}
+
 
 /* ── グローバルナビ：下線スライドアニメーション ── */
 .nav-underline {

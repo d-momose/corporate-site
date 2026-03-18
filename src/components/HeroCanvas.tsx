@@ -177,11 +177,13 @@ export default function HeroCanvas() {
       vertexColors: true,
     });
     const points = new THREE.Points(pGeo, pMat);
+    points.scale.set(0.5, 0.5, 0.5);
     scene.add(points);
 
     /* ── 状態管理 ── */
     const sphereCenter = new THREE.Vector3();
-    const startPos = screenToWorld(0.5, 0.5, camera);
+    const isWide = window.innerWidth >= 1200;
+    const startPos = screenToWorld(isWide ? 0.25 : 0.47, isWide ? 0.01 : 0.10, camera);
     const endPos   = new THREE.Vector3(0, 0, 0);
     sphereCenter.copy(startPos);
 
@@ -272,7 +274,7 @@ export default function HeroCanvas() {
       },
       onUpdate(self) {
         // スクロール中はオーバーレイ(z:40)より上、静止時はヒーローテキスト(z:10)より下
-        mount.style.zIndex = self.progress > 0.01 ? "55" : "5";
+        mount.style.zIndex = self.progress > 0.01 ? "55" : "8";
         // スクロール量に連動して球体中心を移動
         sphereCenter.lerpVectors(startPos, endPos, self.progress);
 
@@ -343,7 +345,7 @@ export default function HeroCanvas() {
         width: "100vw",
         height: "100vh",
         pointerEvents: "none",
-        zIndex: 5,
+        zIndex: 8,
         opacity: 0,
         animation: "shurikenIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         animationDelay: "4.8s",

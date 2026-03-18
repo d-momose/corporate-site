@@ -104,7 +104,7 @@ export default function Header() {
         transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
       } : {}}
     >
-      <div className="pl-4 pr-4 md:pl-8 md:pr-8 min-[1440px]:pl-16 min-[1440px]:pr-8 h-16 md:h-20 flex items-center justify-between">
+      <div className="pl-4 pr-4 md:pl-8 md:pr-8 min-[1200px]:pl-16 min-[1200px]:pr-8 h-16 md:h-20 flex items-center justify-between">
 
         {/* ロゴ */}
         <Link href="/" className="flex items-center">
@@ -117,7 +117,7 @@ export default function Header() {
         </Link>
 
         {/* PC用ナビ */}
-        <nav className="hidden min-[1440px]:flex items-center gap-1">
+        <nav className="hidden min-[1200px]:flex items-center gap-1">
           {navItems.map((item) => {
             const sectionId = item.href.startsWith("/#") ? item.href.slice(2) : null;
             const isActive = sectionId ? activeSection === sectionId : pathname === item.href;
@@ -156,7 +156,7 @@ export default function Header() {
         {/* ハンバーガーボタン */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`min-[1440px]:hidden p-2 transition-colors duration-300 ${isLight ? "text-gray-900" : "text-white"}`}
+          className={`min-[1200px]:hidden p-2 transition-colors duration-300 ${isLight ? "text-gray-900" : "text-white"}`}
           aria-label="メニュー"
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -167,7 +167,7 @@ export default function Header() {
 
       {/* モバイルメニュー：ドロワー */}
       <div
-        className={`min-[1440px]:hidden fixed inset-0 z-[110] flex flex-col transition-transform duration-500 ${
+        className={`min-[1200px]:hidden fixed inset-0 z-[110] flex flex-col transition-transform duration-500 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
         style={{

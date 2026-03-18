@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
-import MessageParticles from "./MessageParticles";
 
 import ShurikenIn from "./ShurikenIn";
 
@@ -74,9 +73,8 @@ export default function MessageSection() {
   }, []);
 
   return (
-    <section id="message" className="py-24 bg-white relative overflow-hidden">
-      <MessageParticles />
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="message" className="py-24 relative">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* セクションタイトル */}
         <ShurikenIn className="text-center mb-16">
           <p className="text-base font-medium tracking-widest text-[#E67376] uppercase mb-1">

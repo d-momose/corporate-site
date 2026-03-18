@@ -62,8 +62,9 @@ export default function CompanySection() {
   return (
     <section
       id="company"
-      className="bg-slate-900 py-28"
+      className="py-28"
       style={{
+        background: "#2d0a0b",
         backgroundImage:
           "radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)",
         backgroundSize: "28px 28px",
@@ -91,15 +92,21 @@ export default function CompanySection() {
         </div>
 
         <FadeIn delay={150}>
-          <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 min-[1440px]:gap-x-20">
+          <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 min-[1440px]:gap-x-8">
             {[companyData.slice(0, 4), companyData.slice(4)].map((col, ci) => (
-              <div key={ci} className={`flex flex-col divide-y divide-white/10 ${ci === 1 ? "border-t min-[1440px]:border-t-0 border-white/10" : ""}`}>
-                {col.map(({ label, value }) => (
-                  <div key={label} className="flex gap-8 py-6">
-                    <span className="text-sm font-semibold tracking-widest text-gray-500 uppercase w-28 shrink-0 pt-0.5">
+              <div key={ci} className={`rounded-2xl overflow-hidden border border-white/10 ${ci === 1 ? "mt-8 min-[1440px]:mt-0" : ""}`}>
+                {col.map(({ label, value }, i) => (
+                  <div
+                    key={label}
+                    className="flex items-start gap-6 px-6 py-5 relative"
+                    style={{ background: i % 2 === 0 ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.06)" }}
+                  >
+                    {/* 左アクセントライン */}
+                    <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full" style={{ background: "linear-gradient(to bottom, #E67376, #C9A84C)" }} />
+                    <span className="text-xs font-bold tracking-widest uppercase w-24 shrink-0 pt-1" style={{ color: "#E67376" }}>
                       {label}
                     </span>
-                    <span className="text-white/90 leading-8 whitespace-pre-line text-base md:text-xl">
+                    <span className="text-white/90 leading-8 whitespace-pre-line text-base md:text-lg">
                       {value}
                     </span>
                   </div>

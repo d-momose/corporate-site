@@ -5,8 +5,10 @@ import BusinessSection from "@/components/BusinessSection";
 import MessageSection from "@/components/MessageSection";
 import NewsSection from "@/components/NewsSection";
 import CompanySection from "@/components/CompanySection";
+import CTASection from "@/components/CTASection";
 import WaveDivider from "@/components/WaveDivider";
 import SphereOverlay from "@/components/SphereOverlay";
+import MessageParticles from "@/components/MessageParticles";
 
 export default function Home() {
   return (
@@ -16,13 +18,17 @@ export default function Home() {
       <SphereOverlay />
       <HeroSection />
       <BusinessSection />
-      <WaveDivider topColor="#e8eef5" bottomColor="#b88080" />
+      <WaveDivider topColor="#ffffff" bottomColor="#E67376" />
       <StrengthSection />
-      <WaveDivider topColor="#b88080" bottomColor="#ffffff" />
-      <MessageSection />
-      <WaveDivider topColor="#ffffff" bottomColor="#eef4fb" />
+      <WaveDivider topColor="#E67376" bottomColor="#ffffff" />
+      <div style={{ position: "relative", background: "#ffffff" }}>
+        <MessageParticles />
+        <MessageSection />
+        <CTASection />
+      </div>
+      <WaveDivider topColor="#ffffff" bottomColor="#fdf8d6" />
       <NewsSection />
-      <WaveDivider topColor="#eef4fb" bottomColor="#0f172a" />
+      <WaveDivider topColor="#fdf8d6" bottomColor="#2d0a0b" />
       <CompanySection />
     </main>
   );

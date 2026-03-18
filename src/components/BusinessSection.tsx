@@ -103,7 +103,7 @@ const services = [
       "業務フロー分析によるボトルネック特定と自動化提案",
       "AI活用人材の育成・ワークショップ・継続サポート",
     ],
-    headerBg: "linear-gradient(135deg, #C9A84C 0%, #b08a28 100%)",
+    headerBg: "linear-gradient(135deg, #edd200 0%, #c9b000 100%)",
     headerText: "#ffffff",
     reverse: true,
   },
@@ -111,13 +111,13 @@ const services = [
 
 export default function BusinessSection() {
   return (
-    <section id="business" className="py-28 scroll-mt-28 relative overflow-hidden" style={{ background: "#e8eef5" }}>
+    <section id="business" className="py-28 scroll-mt-28 relative overflow-hidden" style={{ background: "#f9fafb" }}>
       {/* 背景画像 */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/business-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none" style={{ opacity: 0.35 }} />
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(232,238,245,0.45)" }} />
-      <div className="absolute inset-x-0 top-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, #e8eef5, transparent)" }} />
-      <div className="absolute inset-x-0 bottom-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to top, #e8eef5, transparent)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(249,250,251,0.55)" }} />
+      <div className="absolute inset-x-0 top-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to bottom, #f9fafb 40%, transparent)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to top, #ffffff 40%, transparent)" }} />
       <MessageParticles />
       <div className="max-w-6xl mx-auto px-6">
 
@@ -138,15 +138,6 @@ export default function BusinessSection() {
 
         {/* ── Our Promise ── */}
         <div className="mb-16 relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-end pr-4 pointer-events-none select-none overflow-hidden">
-            <span
-              className="font-bold tracking-widest leading-none text-gray-300"
-              style={{ fontSize: "clamp(60px, 14vw, 160px)", opacity: 0.18 }}
-            >
-              PROMISE
-            </span>
-          </div>
-
           <FadeIn delay={100}>
             <div className="flex items-center gap-4 mb-10">
               <div className="h-[1px] flex-1 bg-gradient-to-r from-[#E67376] to-transparent" />
@@ -160,7 +151,7 @@ export default function BusinessSection() {
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                 同じゴールを目指す
                 <br />
-                <span style={{ color: "#C9A84C" }}>最高のパートナー</span>で
+                <span style={{ color: "#edd200" }}>最高のパートナー</span>で
                 <br />
                 ありたい
               </h3>
@@ -168,7 +159,7 @@ export default function BusinessSection() {
 
             <div className="hidden min-[1440px]:block w-[1px] self-stretch bg-gray-300 flex-shrink-0" />
 
-            <FadeIn delay={1700} className="min-[1440px]:w-1/2 flex flex-col gap-5">
+            <FadeIn delay={600} className="min-[1440px]:w-1/2 flex flex-col gap-5">
               <p className="text-gray-600 leading-9 text-base md:text-lg">
                 私たちは、お客様の「一番の味方」でありたいと思っています。<br />
                 言われた通りに作るだけでなく「どうすればもっと良くなるか」をとことん考え、提案します。
@@ -193,7 +184,7 @@ export default function BusinessSection() {
             const Icon = service.icon;
             return (
               <FadeIn key={service.number} delay={idx * 150}>
-                <div className="bg-white rounded-2xl border-2 border-gray-800 overflow-hidden">
+                <div className="bg-white rounded-2xl border border-gray-300 overflow-hidden">
 
                   {/* ヘッダー */}
                   <div
