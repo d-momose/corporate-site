@@ -73,7 +73,7 @@ export default function LoadingScreen() {
         <div className="intro-item" style={{ animationDelay: "0.1s" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png"
+            src="/logo.svg"
             alt="Delight"
             className="h-8 md:h-11 w-auto"
           />

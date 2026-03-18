@@ -76,7 +76,7 @@ export default function CompanySection() {
           <div className="mb-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo.png"
+              src="/logo.svg"
               alt="Delight"
               className="h-10 w-auto object-contain brightness-0 invert"
             />

@@ -16,9 +16,9 @@ export default function Home() {
       <SphereOverlay />
       <HeroSection />
       <BusinessSection />
-      <WaveDivider topColor="#e8eef5" bottomColor="#CDD2D7" />
+      <WaveDivider topColor="#e8eef5" bottomColor="#b88080" />
       <StrengthSection />
-      <WaveDivider topColor="#CDD2D7" bottomColor="#ffffff" />
+      <WaveDivider topColor="#b88080" bottomColor="#ffffff" />
       <MessageSection />
       <WaveDivider topColor="#ffffff" bottomColor="#eef4fb" />
       <NewsSection />

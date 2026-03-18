@@ -5,7 +5,6 @@ import type React from "react";
 import { Server, Cpu } from "lucide-react"; // ワンポイントアイコン — 削除して戻す場合はこの行とカード内の <Icon> 部分を削除
 import MessageParticles from "./MessageParticles";
 import ShurikenIn from "./ShurikenIn";
-import TypewriterOnScroll from "./TypewriterOnScroll";
 
 /* ── グレースケール→カラー スクロールリビール — 元に戻す場合: この関数と各カード写真の <GrayscaleReveal> を div に戻す ── */
 function GrayscaleReveal({ className = "", children }: { className?: string; children: React.ReactNode }) {
@@ -158,14 +157,11 @@ export default function BusinessSection() {
             {/* 左：大見出し */}
             <FadeIn delay={200} className="min-[1440px]:w-1/2">
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
-                <TypewriterOnScroll text="同じゴールを目指す" speed={60} />
+                同じゴールを目指す
                 <br />
-                <span style={{ color: "#C9A84C" }}>
-                  <TypewriterOnScroll text="最高のパートナー" speed={60} delay={700} />
-                </span>
-                <TypewriterOnScroll text="で" speed={60} delay={1180} />
+                <span style={{ color: "#C9A84C" }}>最高のパートナー</span>で
                 <br />
-                <TypewriterOnScroll text="ありたい" speed={60} delay={1300} />
+                ありたい
               </h3>
             </FadeIn>
 

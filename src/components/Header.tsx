@@ -110,9 +110,9 @@ export default function Header() {
         <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png"
+            src={isLight ? "/logo.svg" : "/logo-header-dark.svg"}
             alt="Delight"
-            className={`h-9 md:h-10 w-auto object-contain brightness-0 transition-all duration-300 ${isLight ? "" : "invert"}`}
+            className="h-9 md:h-10 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
@@ -181,7 +181,7 @@ export default function Header() {
         <div className="px-4 pt-7 pb-6 border-b border-white/10 flex items-center justify-between">
           <Link href="/" onClick={() => setIsMenuOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Delight" className="h-7 brightness-0 invert" />
+            <img src="/logo.svg" alt="Delight" className="h-7 brightness-0 invert" />
           </Link>
           <button
             onClick={() => setIsMenuOpen(false)}

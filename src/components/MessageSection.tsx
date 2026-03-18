@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import MessageParticles from "./MessageParticles";
 
-import TypewriterOnScroll from "./TypewriterOnScroll";
 import ShurikenIn from "./ShurikenIn";
 
 function FadeIn({
@@ -130,9 +129,9 @@ export default function MessageSection() {
           <div className="w-full min-[1440px]:w-3/5 flex flex-col gap-6 text-gray-700 leading-9 text-lg md:text-xl">
             <FadeIn delay={300}>
               <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-snug" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
-                <TypewriterOnScroll text="喜びの源泉は、" speed={70} />
+                喜びの源泉は、
                 <br />
-                <TypewriterOnScroll text="いつも「ヒト」にある。" speed={70} delay={560} />
+                いつも「ヒト」にある。
               </h3>
             </FadeIn>
 
@@ -161,9 +160,9 @@ export default function MessageSection() {
 
             <FadeIn delay={600}>
               <p className="text-2xl md:text-3xl font-semibold text-gray-900" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
-                <TypewriterOnScroll text="「社会はもっとフェアであるべきだ。」" speed={60} />
+                「社会はもっとフェアであるべきだ。」
                 <br />
-                <TypewriterOnScroll text="「ヒトはもっと充実した人生を送るべきだ」" speed={60} delay={1020} />
+                「ヒトはもっと充実した人生を送るべきだ」
               </p>
             </FadeIn>
 

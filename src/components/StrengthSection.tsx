@@ -232,7 +232,7 @@ export default function StrengthSection() {
   }, []);
 
   return (
-    <section id="strength" className="py-28 scroll-mt-28 relative overflow-hidden" style={{ background: "#CDD2D7" }}>
+    <section id="strength" className="py-28 scroll-mt-28 relative overflow-hidden" style={{ background: "#b88080" }}>
       {/* 背景写真 */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -242,11 +242,11 @@ export default function StrengthSection() {
         style={{ opacity: 0.75 }}
       />
       {/* カラーオーバーレイ：写真とセクション色をブレンド */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(205,210,215,0.55)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(184,128,128,0.55)" }} />
       {/* 上端フェード：WaveDivider との境界を消す */}
-      <div className="absolute inset-x-0 top-0 h-44 pointer-events-none" style={{ background: "linear-gradient(to bottom, #CDD2D7 0%, transparent 100%)" }} />
+      <div className="absolute inset-x-0 top-0 h-44 pointer-events-none" style={{ background: "linear-gradient(to bottom, #b88080 0%, transparent 100%)" }} />
       {/* 下端フェード：WaveDivider との境界を消す */}
-      <div className="absolute inset-x-0 bottom-0 h-44 pointer-events-none" style={{ background: "linear-gradient(to top, #CDD2D7 0%, transparent 100%)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-44 pointer-events-none" style={{ background: "linear-gradient(to top, #b88080 0%, transparent 100%)" }} />
       <MessageParticles />
       <div className="max-w-5xl mx-auto px-6">
         {/* セクションタイトル */}
