@@ -258,11 +258,11 @@ export default function EntryApplyPage() {
       <section className="relative pt-36 pb-20 overflow-hidden">
         {/* 背景画像 */}
         <Image
-          src="/entry-apply-hero.jpg"
+          src="/entry-apply-hero-2.jpg"
           alt=""
           fill
           priority
-          className="object-cover object-center pointer-events-none select-none"
+          className="object-cover object-[center_30%] pointer-events-none select-none"
         />
         {/* 暗めのオーバーレイ */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(20,20,30,0.55)" }} />

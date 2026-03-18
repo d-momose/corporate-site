@@ -9,7 +9,6 @@ const SKIP_PATHS = ["/privacy"];
 
 export default function LoadingScreen() {
   const pathname = usePathname();
-  // 元に戻す場合: "logo-exit" を削除し "visible" | "exit" | "done" に戻す
   const [phase, setPhase] = useState<"visible" | "exit" | "logo-exit" | "done">("visible");
   const [typed, setTyped] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -23,19 +22,18 @@ export default function LoadingScreen() {
         setTyped(FULL_TEXT.slice(0, i));
         if (i >= FULL_TEXT.length) {
           clearInterval(interval);
-          setTimeout(() => setShowCursor(false), 600);
+          setTimeout(() => setShowCursor(false), 400);
         }
-      }, 100);
+      }, 65);
       return () => clearInterval(interval);
-    }, 300);
+    }, 200);
     return () => clearTimeout(start);
   }, []);
 
-  // 元に戻す場合: t2 を 3600ms・"done" に戻し、t3 を削除。"logo-exit" → "exit" に戻す
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase("exit"), 2800);
-    const t2 = setTimeout(() => setPhase("logo-exit"), 3300);
-    const t3 = setTimeout(() => setPhase("done"), 3900);
+    const t1 = setTimeout(() => setPhase("exit"), 2000);
+    const t2 = setTimeout(() => setPhase("logo-exit"), 2500);
+    const t3 = setTimeout(() => setPhase("done"), 3000);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
@@ -54,9 +52,6 @@ export default function LoadingScreen() {
   if (SKIP_PATHS.includes(pathname) || phase === "done") return null;
 
   return (
-    // 元に戻す場合: backgroundColor・backgroundImage・backgroundSize を直接ここに戻し、
-    // transform: phase==="exit" ? "translateY(-100%)" : "translateY(0)"、
-    // transition: "transform 0.8s cubic-bezier(0.76, 0, 0.24, 1)" に戻す
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center"
       style={{

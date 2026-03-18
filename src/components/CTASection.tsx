@@ -50,7 +50,7 @@ function FadeIn({
 export default function CTASection() {
   return (
     <section className="relative py-20 md:py-28">
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-0 md:gap-16">
 
           {/* テキスト：左側 */}
@@ -67,7 +67,7 @@ export default function CTASection() {
                 style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}
               >
                 一緒に、<br />
-                Delightを<br className="md:hidden" />創りませんか。
+                Delightを<br className="md:hidden" />つくりませんか。
               </h2>
             </FadeIn>
 

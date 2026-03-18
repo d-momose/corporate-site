@@ -51,7 +51,6 @@ function FadeIn({
 
 export default function MessageSection() {
   // グレースケール→カラー スクロールアニメーション
-  // 元に戻す場合: この useRef・useEffect と画像コンテナの ref・style を削除
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -74,13 +73,12 @@ export default function MessageSection() {
 
   return (
     <section id="message" className="py-24 relative">
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         {/* セクションタイトル */}
         <ShurikenIn className="text-center mb-16">
           <p className="text-base font-medium tracking-widest text-[#E67376] uppercase mb-1">
             CEO Message
           </p>
-          {/* 元に戻す場合: style を { fontFamily: "var(--font-yuji-syuku)" } に戻す */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight mb-5 whitespace-nowrap" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
             代表メッセージ
           </h2>
@@ -91,12 +89,12 @@ export default function MessageSection() {
           </div>
         </ShurikenIn>
 
-        <div className="flex flex-col min-[1440px]:flex-row gap-12 min-[1440px]:gap-16 items-start">
+        <div className="flex flex-col min-[1200px]:flex-row gap-12 min-[1200px]:gap-16 items-start">
           {/* 左：画像 */}
-          <FadeIn delay={150} className="w-full min-[1440px]:w-2/5 flex-shrink-0">
+          <FadeIn delay={150} className="w-full min-[1200px]:w-2/5 flex-shrink-0">
             <div
               ref={imageContainerRef}
-              className="relative w-full aspect-[3/4] max-w-sm mx-auto min-[1440px]:mx-0 overflow-hidden rounded-2xl"
+              className="relative w-full aspect-[3/4] max-w-sm mx-auto min-[1200px]:mx-0 overflow-hidden rounded-2xl"
               style={{ filter: "grayscale(1)", transition: "filter 0.15s ease-out" }}
             >
               <Image
@@ -124,7 +122,7 @@ export default function MessageSection() {
           </FadeIn>
 
           {/* 右：テキスト */}
-          <div className="w-full min-[1440px]:w-3/5 flex flex-col gap-6 text-gray-700 leading-9 text-lg md:text-xl">
+          <div className="w-full min-[1200px]:w-3/5 flex flex-col gap-6 text-gray-700 leading-9 text-lg md:text-xl">
             <FadeIn delay={300}>
               <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-snug" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                 喜びの源泉は、

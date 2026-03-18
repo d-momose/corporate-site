@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 
 const IMAGES = [
   "/hero-blob-1.jpg",
+  "/hero-blob-2.jpg",
 ];
 
 export default function HeroBlob() {
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState<number | null>(null);
+  const [slideshowStarted, setSlideshowStarted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMedium, setIsMedium] = useState(false);
 
@@ -28,13 +30,20 @@ export default function HeroBlob() {
     };
   }, []);
 
+  // Blob表示アニメーション(4.8s)完了後にスライドショー開始
   useEffect(() => {
+    const delay = setTimeout(() => setSlideshowStarted(true), 5500);
+    return () => clearTimeout(delay);
+  }, []);
+
+  useEffect(() => {
+    if (!slideshowStarted) return;
     const timer = setInterval(() => {
       setPrev(current);
       setCurrent(c => (c + 1) % IMAGES.length);
     }, 3000);
     return () => clearInterval(timer);
-  }, [current]);
+  }, [current, slideshowStarted]);
 
   const SIZE = isMobile ? "clamp(280px, 80vw, 400px)" : "clamp(420px, 48vw, 620px)";
 
@@ -54,26 +63,26 @@ export default function HeroBlob() {
       }}
     >
       {/* バウンスイン（球体出現後に登場） */}
-      <div style={{ width: "100%", height: "100%", opacity: 0, animation: "blobBounceIn 1.2s ease-out forwards", animationDelay: "5.6s" }}>
+      <div style={{ width: "100%", height: "100%", opacity: 0, animation: "blobBounceIn 1.2s ease-out forwards", animationDelay: "4.8s" }}>
       {/* グロー */}
       <div
         style={{
           position: "absolute",
           inset: "-16px",
           background: "radial-gradient(circle, rgba(230,115,118,0.3) 0%, transparent 70%)",
-          animation: "blobMorph 14s ease-in-out infinite",
+          animation: "blobMorph 20s ease-in-out infinite",
           filter: "blur(16px)",
         }}
       />
 
-      {/* 画像コンテナ（blobMorph で切り抜き形状が変化） */}
+      {/* グラデーションボーダー + 画像コンテナ */}
       <div
         style={{
           position: "relative",
           width: "100%",
           height: "100%",
           overflow: "hidden",
-          animation: "blobMorph 14s ease-in-out infinite",
+          animation: "blobMorph 20s ease-in-out infinite",
         }}
       >
         {IMAGES.map((src, i) => (
@@ -91,6 +100,8 @@ export default function HeroBlob() {
               opacity: i === current ? 1 : 0,
               transition: "opacity 1s ease-in-out",
               zIndex: i === current ? 2 : i === prev ? 1 : 0,
+              animation: "photoZoomIn 6s ease-out forwards, photoBreath 6s 6s ease-in-out infinite",
+              transformOrigin: "center center",
             }}
           />
         ))}

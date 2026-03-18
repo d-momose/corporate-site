@@ -43,14 +43,13 @@ const news: { date: string; category: Category; title: string }[] = [
 export default function NewsSection() {
   return (
     <section id="news" className="py-24 bg-[#fdf8d6] relative scroll-mt-28">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-6">
 
         {/* セクションタイトル */}
         <ShurikenIn className="text-center mb-16">
           <p className="text-base font-medium tracking-widest text-[#E67376] uppercase mb-1">
             News
           </p>
-          {/* 元に戻す場合: style を削除 */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight mb-5 whitespace-nowrap" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
             お知らせ
           </h2>

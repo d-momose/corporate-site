@@ -156,7 +156,7 @@ export default function EntryPage() {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         {/* 背景画像 */}
         <Image
-          src="/entry-hero-2.jpg"
+          src="/entry-hero-4.jpg"
           alt=""
           fill
           priority
@@ -167,7 +167,7 @@ export default function EntryPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.05) 100%)" }} />
 
         {/* テキスト */}
-        <div className="relative max-w-6xl mx-auto px-6 pb-20 md:pb-28 w-full">
+        <div className="relative max-w-[1200px] mx-auto px-6 pb-20 md:pb-28 w-full">
           <ShurikenIn>
             <p className="text-sm font-semibold tracking-[0.4em] uppercase mb-4 text-white/70">
               Recruit / Entry
@@ -191,7 +191,7 @@ export default function EntryPage() {
 
       {/* ── 数値ハイライト ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
           <FadeIn className="text-center mb-16">
             <p className="text-xs font-bold tracking-[0.4em] uppercase mb-3" style={{ color: "#E67376" }}>Why Delight</p>
             <h2
@@ -227,7 +227,7 @@ export default function EntryPage() {
 
       {/* ── Delightについて ── */}
       <section className="py-24" style={{ background: "#f5f0eb" }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
           <FadeIn className="text-center mb-16">
             <p className="text-xs font-bold tracking-[0.4em] uppercase mb-3" style={{ color: "#E67376" }}>About Delight</p>
             <h2
@@ -309,7 +309,7 @@ export default function EntryPage() {
 
       {/* ── 福利厚生 ── */}
       <section className="py-24" style={{ background: "#f5f0eb" }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
           <FadeIn className="text-center mb-16">
             <p className="text-xs font-bold tracking-[0.4em] uppercase mb-3" style={{ color: "#E67376" }}>Benefits</p>
             <h2

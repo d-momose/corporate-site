@@ -119,7 +119,7 @@ export default function BusinessSection() {
       <div className="absolute inset-x-0 top-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to bottom, #f9fafb 40%, transparent)" }} />
       <div className="absolute inset-x-0 bottom-0 h-56 pointer-events-none" style={{ background: "linear-gradient(to top, #ffffff 40%, transparent)" }} />
       <MessageParticles />
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-6">
 
         {/* セクションタイトル */}
         <ShurikenIn className="text-center mb-20">
@@ -146,8 +146,8 @@ export default function BusinessSection() {
             </div>
           </FadeIn>
 
-          <div className="relative flex flex-col min-[1440px]:flex-row gap-10 min-[1440px]:gap-16 items-start">
-            <FadeIn delay={200} className="min-[1440px]:w-1/2">
+          <div className="relative flex flex-col min-[1200px]:flex-row gap-10 min-[1200px]:gap-16 items-start">
+            <FadeIn delay={200} className="min-[1200px]:w-1/2">
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                 同じゴールを目指す
                 <br />
@@ -157,9 +157,9 @@ export default function BusinessSection() {
               </h3>
             </FadeIn>
 
-            <div className="hidden min-[1440px]:block w-[1px] self-stretch bg-gray-300 flex-shrink-0" />
+            <div className="hidden min-[1200px]:block w-[1px] self-stretch bg-gray-300 flex-shrink-0" />
 
-            <FadeIn delay={600} className="min-[1440px]:w-1/2 flex flex-col gap-5">
+            <FadeIn delay={600} className="min-[1200px]:w-1/2 flex flex-col gap-5">
               <p className="text-gray-600 leading-9 text-base md:text-lg">
                 私たちは、お客様の「一番の味方」でありたいと思っています。<br />
                 言われた通りに作るだけでなく「どうすればもっと良くなるか」をとことん考え、提案します。
@@ -220,7 +220,7 @@ export default function BusinessSection() {
 
                     {/* テキスト */}
                     <div className="md:w-3/5 p-7 md:p-10 flex flex-col gap-5 justify-center">
-                      <p className="text-gray-900 text-xl md:text-2xl leading-9 whitespace-pre-line font-bold">
+                      <p className="text-gray-900 text-xl md:text-2xl leading-9 whitespace-pre-line" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                         {service.tagline}
                       </p>
                       <ul className="flex flex-col gap-2.5">

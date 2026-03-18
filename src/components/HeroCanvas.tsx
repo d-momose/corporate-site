@@ -348,7 +348,7 @@ export default function HeroCanvas() {
         zIndex: 8,
         opacity: 0,
         animation: "shurikenIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-        animationDelay: "4.8s",
+        animationDelay: "4.0s",
       }}
     />
   );

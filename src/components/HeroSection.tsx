@@ -70,16 +70,15 @@ export default function HeroSection() {
       {/* 左：テキストエリア */}
       <div className="relative z-10 flex flex-col justify-center w-full md:w-1/2 pl-[8vw] pr-6 select-none pt-20 md:pt-[clamp(130px,18vh,190px)]">
         {/* h1：3行を時間差で手裏剣のように投擲 — ローディング退場(3.6s)直後から開始 */}
-        {/* 元に戻す場合: style を削除して font-bold を戻す */}
         <h1 className="text-white leading-tight mb-3"
           style={{ fontFamily: 'var(--font-kaisei-tokumin), "ヒラギノ角ゴ ProN W6", sans-serif', fontWeight: 800, fontSize: "clamp(62px, 16.5vw, 86px)" }}>
-          <span className="shuriken-in" style={{ animationDelay: "3.85s", whiteSpace: "nowrap" }}>喜びが、</span>
-          <span className="shuriken-in" style={{ animationDelay: "4.05s", whiteSpace: "nowrap" }}>次の喜びを</span>
-          <span className="shuriken-in" style={{ animationDelay: "4.25s", whiteSpace: "nowrap" }}>生む。</span>
+          <span className="shuriken-in" style={{ animationDelay: "3.1s", whiteSpace: "nowrap" }}>喜びが、</span>
+          <span className="shuriken-in" style={{ animationDelay: "3.3s", whiteSpace: "nowrap" }}>次の喜びを</span>
+          <span className="shuriken-in" style={{ animationDelay: "3.5s", whiteSpace: "nowrap" }}>生む。</span>
         </h1>
 
 
-        <p className="max-w-xl font-bold hero-slide-up leading-[2.2]" style={{ animationDelay: "4.9s", fontSize: "clamp(17px, 4.53vw, 24px)" }}>
+        <p className="max-w-xl font-bold hero-slide-up leading-[2.2]" style={{ animationDelay: "4.1s", fontSize: "clamp(17px, 4.53vw, 24px)" }}>
           <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "2px 10px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
             メンバーの喜びが、お客様の喜びへ。
           </span>

@@ -70,7 +70,7 @@ export default function CompanySection() {
         backgroundSize: "28px 28px",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-6">
 
         {/* セクションタイトル */}
         <div className="mb-20">
@@ -85,16 +85,15 @@ export default function CompanySection() {
           <p className="text-sm font-semibold tracking-[0.3em] text-gray-500 uppercase mb-2">
             Company
           </p>
-          {/* 元に戻す場合: style を削除 */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight whitespace-nowrap" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
             会社概要
           </h2>
         </div>
 
         <FadeIn delay={150}>
-          <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 min-[1440px]:gap-x-8">
+          <div className="grid grid-cols-1 min-[1200px]:grid-cols-2 min-[1200px]:gap-x-8">
             {[companyData.slice(0, 4), companyData.slice(4)].map((col, ci) => (
-              <div key={ci} className={`rounded-2xl overflow-hidden border border-white/10 ${ci === 1 ? "mt-8 min-[1440px]:mt-0" : ""}`}>
+              <div key={ci} className={`rounded-2xl overflow-hidden border border-white/10 ${ci === 1 ? "mt-8 min-[1200px]:mt-0" : ""}`}>
                 {col.map(({ label, value }, i) => (
                   <div
                     key={label}
