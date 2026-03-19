@@ -96,7 +96,7 @@ export default function CTASection() {
                   採用情報を見る →
                 </Link>
                 <Link
-                  href="/entry#apply"
+                  href="/entry/apply"
                   className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-bold text-gray-700 text-base border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:border-[#E67376] hover:text-[#E67376]"
                 >
                   エントリーする
