@@ -184,7 +184,7 @@ export default function BusinessSection() {
             const Icon = service.icon;
             return (
               <FadeIn key={service.number} delay={idx * 150}>
-                <div className="bg-white rounded-2xl border border-gray-300 overflow-hidden">
+                <div className="bg-white rounded-2xl border border-gray-300 overflow-hidden max-w-[60%] mx-auto">
 
                   {/* ヘッダー */}
                   <div
