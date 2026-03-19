@@ -106,6 +106,35 @@ export default function HeroBlob() {
           />
         ))}
       </div>
+
+      {/* スライドインジケーター */}
+      <div style={{
+        position: "absolute",
+        bottom: "-28px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display: "flex",
+        gap: "8px",
+        zIndex: 10,
+      }}>
+        {IMAGES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => { setPrev(current); setCurrent(i); }}
+            style={{
+              width: i === current ? "20px" : "8px",
+              height: "8px",
+              borderRadius: "4px",
+              background: i === current ? "#E67376" : "rgba(255,255,255,0.6)",
+              border: "none",
+              padding: 0,
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+            }}
+            aria-label={`スライド ${i + 1}`}
+          />
+        ))}
+      </div>
       </div>
     </div>
   );
