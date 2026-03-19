@@ -102,9 +102,19 @@ export default function HeroBlob() {
               zIndex: i === current ? 2 : i === prev ? 1 : 0,
               animation: "photoZoomIn 6s ease-out forwards, photoBreath 6s 6s ease-in-out infinite",
               transformOrigin: "center center",
+              filter: "brightness(0.78) saturate(0.8)",
             }}
           />
         ))}
+        {/* 背景馴染み用オーバーレイ：周縁を暗くするビネット＋赤みのカラートーン */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 3,
+          pointerEvents: "none",
+          background: "radial-gradient(circle at center, rgba(20,5,5,0.05) 40%, rgba(20,5,5,0.45) 100%)",
+          mixBlendMode: "multiply",
+        }} />
       </div>
 
       {/* スライドインジケーター */}
