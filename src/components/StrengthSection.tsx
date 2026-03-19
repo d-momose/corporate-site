@@ -49,98 +49,93 @@ function FadeIn({
   );
 }
 
-/* ─── カスタムSVGアイコン ─── */
-const RocketIcon = () => (
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11">
-    <defs>
-      <linearGradient id="si-rocket-body" x1="22" y1="3" x2="22" y2="36" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#fca5a5" />
-        <stop offset="1" stopColor="#be123c" />
-      </linearGradient>
-      <linearGradient id="si-rocket-flame" x1="22" y1="36" x2="22" y2="44" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#fde68a" />
-        <stop offset="1" stopColor="#f97316" />
-      </linearGradient>
-    </defs>
-    {/* ボディ */}
-    <path d="M22 3C22 3 33 13 33 26V31L22 36L11 31V26C11 13 22 3 22 3Z" fill="url(#si-rocket-body)" />
-    {/* 左フィン */}
-    <path d="M11 24L5 32L11 32Z" fill="#f87171" />
-    {/* 右フィン */}
-    <path d="M33 24L39 32L33 32Z" fill="#f87171" />
-    {/* ウィンドウ */}
-    <circle cx="22" cy="19" r="5.5" fill="white" fillOpacity="0.9" />
-    <circle cx="22" cy="19" r="3.5" fill="#fca5a5" fillOpacity="0.45" />
-    {/* ウィンドウの光沢 */}
-    <path d="M19 16.5C19.8 15.5 21 15 22.5 15" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.85" />
-    {/* 炎 */}
-    <path d="M16 36L22 44L28 36Z" fill="url(#si-rocket-flame)" />
-    <path d="M19.5 36L22 41.5L24.5 36Z" fill="#fef3c7" fillOpacity="0.75" />
-  </svg>
-);
-
-const DiamondIcon = () => (
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11">
-    <defs>
-      <linearGradient id="si-gem-topleft" x1="8" y1="8" x2="22" y2="20" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#fef9c3" />
-        <stop offset="1" stopColor="#fbbf24" />
-      </linearGradient>
-      <linearGradient id="si-gem-topright" x1="22" y1="8" x2="36" y2="20" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#fde68a" />
-        <stop offset="1" stopColor="#d97706" />
-      </linearGradient>
-      <linearGradient id="si-gem-botleft" x1="8" y1="20" x2="22" y2="42" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#fbbf24" />
-        <stop offset="1" stopColor="#92400e" />
-      </linearGradient>
-      <linearGradient id="si-gem-botright" x1="22" y1="20" x2="36" y2="42" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#fde68a" />
-        <stop offset="1" stopColor="#78350f" />
-      </linearGradient>
-    </defs>
-    {/* 上左 */}
-    <path d="M22 7L9 20H22Z" fill="url(#si-gem-topleft)" />
-    {/* 上右 */}
-    <path d="M22 7L35 20H22Z" fill="url(#si-gem-topright)" />
-    {/* 下左 */}
-    <path d="M9 20L22 41L22 20Z" fill="url(#si-gem-botleft)" />
-    {/* 下右 */}
-    <path d="M35 20L22 41L22 20Z" fill="url(#si-gem-botright)" />
-    {/* エッジライン */}
-    <path d="M9 20H35M22 20V41M22 7L9 20M22 7L35 20" stroke="#fef9c3" strokeWidth="0.4" strokeOpacity="0.5" />
-    {/* 光沢 */}
-    <path d="M14 11L11 19" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeOpacity="0.85" />
-    <path d="M17 8.5L15.5 12" stroke="white" strokeWidth="1.1" strokeLinecap="round" strokeOpacity="0.6" />
-  </svg>
-);
-
-const TrophyIcon = () => (
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-11">
-    <defs>
-      <linearGradient id="si-trophy-cup" x1="10" y1="5" x2="34" y2="32" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#bfdbfe" />
-        <stop offset="1" stopColor="#1d4ed8" />
-      </linearGradient>
-      <linearGradient id="si-trophy-base" x1="14" y1="38" x2="30" y2="43" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#60a5fa" />
-        <stop offset="1" stopColor="#1e3a8a" />
-      </linearGradient>
-    </defs>
-    {/* カップ本体 */}
-    <path d="M10 5H34V22C34 29.2 28.6 34 22 34C15.4 34 10 29.2 10 22V5Z" fill="url(#si-trophy-cup)" />
-    {/* 左ハンドル */}
-    <path d="M10 8C6 9 3 13 3 17C3 21 6 23 10 23" stroke="#93c5fd" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    {/* 右ハンドル */}
-    <path d="M34 8C38 9 41 13 41 17C41 21 38 23 34 23" stroke="#93c5fd" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    {/* ステム */}
-    <rect x="19.5" y="34" width="5" height="5" fill="#3b82f6" />
-    {/* 台座 */}
-    <rect x="13" y="39" width="18" height="3.5" rx="1.75" fill="url(#si-trophy-base)" />
+/* ─── イラストアイコン ─── */
+const TeamIllustration = () => (
+  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20">
+    {/* 左の人 */}
+    <path d="M8 40 Q8 29 17 29 Q26 29 26 40" fill="#f87171"/>
+    <circle cx="17" cy="40" r="9" fill="#fde8d8"/>
+    <path d="M9.5 63 Q9.5 52 17 52 Q24.5 52 24.5 63" fill="#f87171"/>
+    <circle cx="15" cy="39.5" r="1.4" fill="#7c2d12"/>
+    <circle cx="19" cy="39.5" r="1.4" fill="#7c2d12"/>
+    <path d="M14.5 43.5 Q17 45.5 19.5 43.5" stroke="#7c2d12" strokeWidth="1.1" strokeLinecap="round" fill="none"/>
+    {/* 中央の人（やや大きく・高い位置） */}
+    <path d="M30 31 Q30 19.5 40 19.5 Q50 19.5 50 31" fill="#E67376"/>
+    <circle cx="40" cy="31" r="10.5" fill="#fde8d8"/>
+    <path d="M31 62 Q31 49.5 40 49.5 Q49 49.5 49 62" fill="#E67376"/>
+    <circle cx="37.5" cy="30.5" r="1.6" fill="#7c2d12"/>
+    <circle cx="42.5" cy="30.5" r="1.6" fill="#7c2d12"/>
+    <path d="M37 34.5 Q40 37 43 34.5" stroke="#7c2d12" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+    {/* 右の人 */}
+    <path d="M54 40 Q54 29 63 29 Q72 29 72 40" fill="#be123c"/>
+    <circle cx="63" cy="40" r="9" fill="#fde8d8"/>
+    <path d="M55.5 63 Q55.5 52 63 52 Q70.5 52 70.5 63" fill="#be123c"/>
+    <circle cx="61" cy="39.5" r="1.4" fill="#7c2d12"/>
+    <circle cx="65" cy="39.5" r="1.4" fill="#7c2d12"/>
+    <path d="M60.5 43.5 Q63 45.5 65.5 43.5" stroke="#7c2d12" strokeWidth="1.1" strokeLinecap="round" fill="none"/>
     {/* 星 */}
-    <path d="M22 11L23.5 15.8H28.5L24.5 18.6L26 23.4L22 20.6L18 23.4L19.5 18.6L15.5 15.8H20.5Z" fill="white" fillOpacity="0.92" />
-    {/* 光沢 */}
-    <path d="M14 9C15.5 7.5 17.5 6.5 19.5 6" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.75" />
+    <path d="M40 5 L41.8 10.5 H47.5 L43 14 L44.8 19.5 L40 16 L35.2 19.5 L37 14 L32.5 10.5 H38.2 Z" fill="#fbbf24"/>
+    {/* 連結ライン */}
+    <path d="M26 55 Q40 61 54 55" stroke="#fca5a5" strokeWidth="1.8" strokeDasharray="3,2.5" strokeLinecap="round" fill="none"/>
+  </svg>
+);
+
+const PartnerIllustration = () => (
+  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20">
+    {/* 左の人 */}
+    <path d="M5 40 Q5 29 14 29 Q23 29 23 40" fill="#92400e"/>
+    <circle cx="14" cy="40" r="9" fill="#fde8d8"/>
+    <path d="M6 63 Q6 52 14 52 Q22 52 22 63" fill="#d97706"/>
+    <circle cx="12" cy="39.5" r="1.4" fill="#5c2b00"/>
+    <circle cx="16" cy="39.5" r="1.4" fill="#5c2b00"/>
+    <path d="M11.5 43.5 Q14 45.5 16.5 43.5" stroke="#5c2b00" strokeWidth="1.1" strokeLinecap="round" fill="none"/>
+    {/* 右の人 */}
+    <path d="M57 40 Q57 29 66 29 Q75 29 75 40" fill="#78350f"/>
+    <circle cx="66" cy="40" r="9" fill="#fde8d8"/>
+    <path d="M58 63 Q58 52 66 52 Q74 52 74 63" fill="#b45309"/>
+    <circle cx="64" cy="39.5" r="1.4" fill="#5c2b00"/>
+    <circle cx="68" cy="39.5" r="1.4" fill="#5c2b00"/>
+    <path d="M63.5 43.5 Q66 45.5 68.5 43.5" stroke="#5c2b00" strokeWidth="1.1" strokeLinecap="round" fill="none"/>
+    {/* ハート */}
+    <path d="M40 23 C40 23 33 17 33 23.5 C33 28.5 40 33.5 40 33.5 C40 33.5 47 28.5 47 23.5 C47 17 40 23 40 23Z" fill="#fbbf24"/>
+    <path d="M35.5 20.5 Q37.5 19 39.5 20" stroke="white" strokeWidth="1.1" strokeLinecap="round" opacity="0.7"/>
+    {/* 握手 */}
+    <path d="M22 53 Q31 51.5 37 54" stroke="#d97706" strokeWidth="3.5" strokeLinecap="round" fill="none"/>
+    <path d="M58 53 Q49 51.5 43 54" stroke="#b45309" strokeWidth="3.5" strokeLinecap="round" fill="none"/>
+    <ellipse cx="40" cy="54" rx="5.5" ry="4" fill="#fbbf24"/>
+  </svg>
+);
+
+const ProjectIllustration = () => (
+  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20">
+    {/* クリップボード */}
+    <rect x="12" y="18" width="56" height="57" rx="6" fill="#eff6ff" stroke="#3b82f6" strokeWidth="1.5"/>
+    {/* クリップ */}
+    <rect x="28" y="11" width="24" height="14" rx="5" fill="#1d4ed8"/>
+    <rect x="32" y="14" width="16" height="8" rx="3" fill="white"/>
+    {/* タスク1 完了 */}
+    <rect x="20" y="33" width="44" height="10" rx="5" fill="white"/>
+    <circle cx="28.5" cy="38" r="4" fill="#22c55e"/>
+    <path d="M26 38 L28 40 L31.5 36" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    <rect x="36" y="35.5" width="22" height="5" rx="2.5" fill="#dbeafe"/>
+    {/* タスク2 完了 */}
+    <rect x="20" y="47" width="44" height="10" rx="5" fill="white"/>
+    <circle cx="28.5" cy="52" r="4" fill="#22c55e"/>
+    <path d="M26 52 L28 54 L31.5 50" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    <rect x="36" y="49.5" width="17" height="5" rx="2.5" fill="#dbeafe"/>
+    {/* タスク3 進行中 */}
+    <rect x="20" y="61" width="44" height="10" rx="5" fill="white"/>
+    <circle cx="28.5" cy="66" r="4" fill="#3b82f6"/>
+    <circle cx="26.8" cy="66" r="1.2" fill="white"/>
+    <circle cx="28.8" cy="66" r="1.2" fill="white"/>
+    <circle cx="30.8" cy="66" r="1.2" fill="white" opacity="0.5"/>
+    <rect x="36" y="63.5" width="24" height="5" rx="2.5" fill="#bfdbfe"/>
+    {/* 管理者アイコン */}
+    <circle cx="59" cy="27" r="5" fill="#bfdbfe"/>
+    <path d="M54.5 32.5 Q54.5 29.5 59 29.5 Q63.5 29.5 63.5 32.5" fill="#3b82f6"/>
+    <circle cx="57.5" cy="25.5" r="1.1" fill="#1d4ed8"/>
+    <circle cx="60.5" cy="25.5" r="1.1" fill="#1d4ed8"/>
+    <path d="M57.2 28 Q59 29.5 60.8 28" stroke="#1d4ed8" strokeWidth="0.9" strokeLinecap="round" fill="none"/>
   </svg>
 );
 
@@ -151,7 +146,7 @@ const strengths = [
     title: "企画から運用まで、\nすべてをワンチームで。",
     description:
       "「企画」「開発」「運用」で担当がバラバラ…なんてことはありません。最初のアイディア出しから完成後のサポートまで、同じチームが責任をもって担当します。だから話が早く、ブレのないシステムづくりが可能です。",
-    renderIcon: <RocketIcon />,
+    renderIcon: <TeamIllustration />,
     gradient: "linear-gradient(135deg, #c04050 0%, #E67376 50%, #f4a8a8 100%)",
     accentColor: "#E67376",
     floatDelay: "0s",
@@ -161,7 +156,7 @@ const strengths = [
     title: "本音で向き合う、\nあなたの事業パートナー。",
     description:
       "私たちは、言われたものを作るだけの業者ではありません。お客様の成功のために「それは本当に最適か？」を共に考え、時には率直な意見もお伝えする誠実なパートナーです。",
-    renderIcon: <DiamondIcon />,
+    renderIcon: <PartnerIllustration />,
     gradient: "linear-gradient(135deg, #92400e 0%, #d97706 55%, #fbbf24 100%)",
     accentColor: "#d97706",
     floatDelay: "1.4s",
@@ -171,7 +166,7 @@ const strengths = [
     title: "面倒なプロジェクト管理は、\nまるっとお任せ。",
     description:
       "開発に必要な人材の手配から、複雑なプロジェクト全体の管理まで、すべてお引き受けします。お客様は、一番大切なご自身のビジネスに集中していただけます。",
-    renderIcon: <TrophyIcon />,
+    renderIcon: <ProjectIllustration />,
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #7dd3fc 100%)",
     accentColor: "#3b82f6",
     floatDelay: "2.8s",
