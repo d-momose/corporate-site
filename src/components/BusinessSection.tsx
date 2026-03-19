@@ -184,7 +184,7 @@ export default function BusinessSection() {
             const Icon = service.icon;
             return (
               <FadeIn key={service.number} delay={idx * 150}>
-                <div className="bg-white rounded-2xl border border-gray-300 overflow-hidden max-w-[60%] mx-auto">
+                <div className="bg-white rounded-2xl border border-gray-300 overflow-hidden max-w-[80%] mx-auto">
 
                   {/* ヘッダー */}
                   <div
@@ -207,7 +207,7 @@ export default function BusinessSection() {
 
                     {/* 写真 */}
                     <div className="md:w-[28%] flex-shrink-0 flex items-center justify-center p-2 md:p-3">
-                      <GrayscaleReveal className="w-full relative h-52 md:h-56 rounded-xl overflow-hidden">
+                      <GrayscaleReveal className="w-full relative h-52 md:h-64 rounded-xl overflow-hidden">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={service.photo}
