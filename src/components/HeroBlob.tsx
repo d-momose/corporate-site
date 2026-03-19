@@ -45,7 +45,7 @@ export default function HeroBlob() {
     return () => clearInterval(timer);
   }, [current, slideshowStarted]);
 
-  const SIZE = isMobile ? "clamp(280px, 80vw, 400px)" : "clamp(420px, 48vw, 620px)";
+  const SIZE = isMobile ? "clamp(17.5rem, 80vw, 25rem)" : "clamp(26.25rem, 30vw, 38.75rem)";
 
   return (
     <div
@@ -68,10 +68,10 @@ export default function HeroBlob() {
       <div
         style={{
           position: "absolute",
-          inset: "-16px",
+          inset: "-1rem",
           background: "radial-gradient(circle, rgba(230,115,118,0.3) 0%, transparent 70%)",
           animation: "blobMorph 8s ease-in-out infinite",
-          filter: "blur(16px)",
+          filter: "blur(1rem)",
         }}
       />
 
@@ -110,11 +110,11 @@ export default function HeroBlob() {
       {/* スライドインジケーター */}
       <div style={{
         position: "absolute",
-        bottom: "-28px",
+        bottom: "-1.75rem",
         left: "50%",
         transform: "translateX(-50%)",
         display: "flex",
-        gap: "8px",
+        gap: "0.5rem",
         zIndex: 10,
       }}>
         {IMAGES.map((_, i) => (
@@ -122,9 +122,9 @@ export default function HeroBlob() {
             key={i}
             onClick={() => { setPrev(current); setCurrent(i); }}
             style={{
-              width: i === current ? "20px" : "8px",
-              height: "8px",
-              borderRadius: "4px",
+              width: i === current ? "1.25rem" : "0.5rem",
+              height: "0.5rem",
+              borderRadius: "0.25rem",
               background: i === current ? "#E67376" : "rgba(255,255,255,0.6)",
               border: "none",
               padding: 0,

@@ -68,26 +68,26 @@ export default function HeroSection() {
       </div>
 
       {/* 左：テキストエリア */}
-      <div className="relative z-10 flex flex-col justify-center w-full md:w-1/2 pl-[8vw] pr-6 select-none pt-20 md:pt-[clamp(130px,18vh,190px)]">
+      <div className="relative z-10 flex flex-col justify-center w-full md:w-1/2 pl-[8vw] pr-6 select-none pt-20 md:pt-[clamp(8.125rem,18vh,11.875rem)]">
         {/* h1：3行を時間差で手裏剣のように投擲 — ローディング退場(3.6s)直後から開始 */}
         <h1 className="text-white leading-tight mb-3"
-          style={{ fontFamily: 'var(--font-kaisei-tokumin), "ヒラギノ角ゴ ProN W6", sans-serif', fontWeight: 800, fontSize: "clamp(62px, 16.5vw, 86px)" }}>
+          style={{ fontFamily: 'var(--font-kaisei-tokumin), "ヒラギノ角ゴ ProN W6", sans-serif', fontWeight: 800, fontSize: "clamp(3.875rem, 4.5vw, 5.375rem)" }}>
           <span className="shuriken-in" style={{ animationDelay: "3.1s", whiteSpace: "nowrap" }}>喜びが、</span>
           <span className="shuriken-in" style={{ animationDelay: "3.3s", whiteSpace: "nowrap" }}>次の喜びを</span>
           <span className="shuriken-in" style={{ animationDelay: "3.5s", whiteSpace: "nowrap" }}>生む。</span>
         </h1>
 
 
-        <p className="max-w-xl font-bold hero-slide-up leading-[2.2]" style={{ animationDelay: "4.1s", fontSize: "clamp(17px, 4.53vw, 24px)" }}>
-          <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "2px 10px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
+        <p className="max-w-xl font-bold hero-slide-up leading-[2.2]" style={{ animationDelay: "4.1s", fontSize: "clamp(1.0625rem, 1.25vw, 1.5rem)" }}>
+          <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "0.125rem 0.625rem", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
             メンバーの喜びが、お客様の喜びへ。
           </span>
           <br />
-          <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "2px 10px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
+          <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "0.125rem 0.625rem", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
             私たちはその「喜びの連鎖」を、
           </span>
           <br />
-          <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "2px 10px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
+          <span style={{ background: "rgba(0,0,0,0.82)", color: "#fff", padding: "0.125rem 0.625rem", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", whiteSpace: "nowrap" }}>
             仕事を通じて広げ続けます。
           </span>
         </p>
@@ -95,7 +95,7 @@ export default function HeroSection() {
       </div>
 
       {/* 波線：画像の上に重ねて下から色が入る */}
-      <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 90, zIndex: 3, overflow: "hidden" }}>
+      <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "5.625rem", zIndex: 3, overflow: "hidden" }}>
         <svg style={{ position: "absolute", bottom: 0, left: 0, width: "200%", height: "100%", opacity: 0.5, animation: "waveScroll 12s linear infinite" }} viewBox="0 0 1440 90" preserveAspectRatio="none">
           <path d="M0,45 C120,65 240,65 360,45 C480,25 600,25 720,45 C840,65 960,65 1080,45 C1200,25 1320,25 1440,45 L1440,90 L0,90 Z" fill="#f9fafb" />
         </svg>

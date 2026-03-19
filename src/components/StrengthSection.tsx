@@ -309,7 +309,7 @@ export default function StrengthSection() {
 
         {/* チームバナー */}
         <FadeIn delay={400} className="mb-20">
-        <div className="relative rounded-2xl overflow-hidden" style={{ height: "clamp(220px, 30vw, 420px)" }}>
+        <div className="relative rounded-2xl overflow-hidden" style={{ height: "clamp(13.75rem, 18vw, 26.25rem)" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/strength-team.jpg"

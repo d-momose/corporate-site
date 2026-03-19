@@ -111,7 +111,7 @@ export default function CTASection() {
             <img
               src="/cta-team.jpg"
               alt="Delightのチーム"
-              className="w-full h-[420px] md:h-[520px] object-cover object-top rounded-2xl"
+              className="w-full h-[26.25rem] md:h-[32.5rem] object-cover object-top rounded-2xl"
             />
           </FadeIn>
 

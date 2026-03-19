@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/*
+ * ── DPIスケーリング対応 ──
+ * Windowsの150%スケーリング時、CSSビューポートは1920/1.5=1280pxになる。
+ * html font-sizeをvwベースにすることで、remサイズが物理的に同じピクセルを
+ * 維持できるよう自動補正する。
+ *   1920px viewport (100% DPI): 0.8333vw = 16px → 1rem = 16px
+ *   1280px viewport (150% DPI): 0.8333vw = 10.67px CSS → 物理16px相当
+ */
+html {
+  font-size: clamp(0.875rem, 0.8333vw, 1rem);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
