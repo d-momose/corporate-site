@@ -206,7 +206,7 @@ export default function BusinessSection() {
                   <div className={`flex flex-col md:flex-row ${service.reverse ? "md:flex-row-reverse" : ""}`}>
 
                     {/* 写真 */}
-                    <div className="md:w-[28%] flex-shrink-0 flex items-center justify-center p-2 md:p-3">
+                    <div className="md:w-[40%] flex-shrink-0 flex items-center justify-center p-2 md:p-3">
                       <GrayscaleReveal className="w-full relative h-52 md:h-64 rounded-xl overflow-hidden">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -219,7 +219,7 @@ export default function BusinessSection() {
                     </div>
 
                     {/* テキスト */}
-                    <div className="md:w-[72%] px-5 py-6 md:px-7 md:py-8 flex flex-col gap-5 justify-center">
+                    <div className="md:w-[60%] px-5 py-6 md:px-7 md:py-8 flex flex-col gap-5 justify-center">
                       <p className="text-gray-900 text-xl md:text-2xl leading-9 whitespace-pre-line" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                         {service.tagline}
                       </p>
