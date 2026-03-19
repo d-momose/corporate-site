@@ -157,7 +157,7 @@ export default function PartnerPage() {
         {/* 背景画像 */}
         <Image
           src="/partner-hero.jpg"
-          alt=""
+          alt="パートナー募集"
           fill
           priority
           className="object-cover object-center pointer-events-none select-none"

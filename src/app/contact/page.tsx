@@ -161,7 +161,7 @@ export default function ContactPage() {
         {/* 背景画像 */}
         <Image
           src="/contact-hero.jpg"
-          alt=""
+          alt="お問い合わせ"
           fill
           priority
           className="object-cover object-center pointer-events-none select-none"

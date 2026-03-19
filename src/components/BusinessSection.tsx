@@ -81,6 +81,7 @@ const services = [
     title: "ITソリューション",
     icon: Pointer,
     photo: "/business-photo.jpg",
+    photoAlt: "ITソリューション事業の作業風景",
     tagline: "システム戦略の立案から\n開発、運用保守までをワンストップで解決",
     points: [
       "要件定義・システム設計から開発・テストまで一貫対応",
@@ -97,6 +98,7 @@ const services = [
     title: "AI業務効率化支援",
     icon: Pointer,
     photo: "/business-photo2.jpg",
+    photoAlt: "AI業務効率化支援のコンサルティング風景",
     tagline: "最新AIの力で、繰り返しを自動化。\n人の力を、より価値ある仕事へ。",
     points: [
       "ChatGPT、Claude等のAI導入・社内活用の設計・定着支援",
@@ -211,7 +213,7 @@ export default function BusinessSection() {
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={service.photo}
-                          alt=""
+                          alt={service.photoAlt}
                           className="absolute inset-0 w-full h-full object-cover"
                           style={{ animation: "photoZoomIn 6s ease-out forwards, photoBreath 6s 6s ease-in-out infinite", transformOrigin: "center center" }}
                         />

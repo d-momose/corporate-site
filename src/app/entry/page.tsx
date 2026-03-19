@@ -157,7 +157,7 @@ export default function EntryPage() {
         {/* 背景画像 */}
         <Image
           src="/entry-hero-4.jpg"
-          alt=""
+          alt="Delight株式会社 採用情報"
           fill
           priority
           className="object-cover pointer-events-none select-none"

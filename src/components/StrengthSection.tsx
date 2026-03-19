@@ -313,7 +313,7 @@ export default function StrengthSection() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/strength-team.jpg"
-            alt=""
+            alt="Delightのチームメンバー"
             className="absolute inset-0 w-full h-full object-cover object-[center_60%]"
             style={{ animation: "photoZoomIn 8s ease-out forwards, photoBreath 8s 8s ease-in-out infinite" }}
           />

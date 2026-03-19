@@ -259,7 +259,7 @@ export default function EntryApplyPage() {
         {/* 背景画像 */}
         <Image
           src="/entry-apply-hero-2.jpg"
-          alt=""
+          alt="エントリーフォーム"
           fill
           priority
           className="object-cover object-[center_30%] pointer-events-none select-none"
