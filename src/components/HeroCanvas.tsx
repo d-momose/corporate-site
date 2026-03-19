@@ -323,9 +323,16 @@ export default function HeroCanvas() {
     };
     window.addEventListener("resize", onResize);
 
+    /* ── ナビゲーション後のレイアウト確定待ち（Next.js SPA遷移対応） ── */
+    const refreshTimer = setTimeout(() => {
+      onResize();
+      ScrollTrigger.refresh();
+    }, 100);
+
     /* ── クリーンアップ ── */
     return () => {
       cancelAnimationFrame(raf);
+      clearTimeout(refreshTimer);
       window.removeEventListener("resize", onResize);
       ScrollTrigger.getAll().forEach((st) => st.kill());
       renderer.dispose();
