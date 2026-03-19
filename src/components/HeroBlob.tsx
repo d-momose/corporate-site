@@ -70,7 +70,7 @@ export default function HeroBlob() {
           position: "absolute",
           inset: "-16px",
           background: "radial-gradient(circle, rgba(230,115,118,0.3) 0%, transparent 70%)",
-          animation: "blobMorph 20s ease-in-out infinite",
+          animation: "blobMorph 8s ease-in-out infinite",
           filter: "blur(16px)",
         }}
       />
@@ -82,7 +82,7 @@ export default function HeroBlob() {
           width: "100%",
           height: "100%",
           overflow: "hidden",
-          animation: "blobMorph 20s ease-in-out infinite",
+          animation: "blobMorph 8s ease-in-out infinite",
         }}
       >
         {IMAGES.map((src, i) => (
