@@ -41,7 +41,7 @@ export default function HeroSection() {
       {/* スライドショー背景 */}
       <div className="absolute inset-0 z-0">
         {/* 暗いオーバーレイ */}
-        <div className="absolute inset-0 z-10" style={{ background: "rgba(0,0,0,0.35)" }} />
+        <div className="absolute inset-0 z-10" style={{ background: "rgba(0,0,0,0.22)" }} />
         {/* 前スライド（フェードアウト） */}
         {prev !== null && (
           <img
