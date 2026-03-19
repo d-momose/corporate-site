@@ -225,7 +225,7 @@ export default function BusinessSection() {
                       </p>
                       <ul className="flex flex-col gap-2.5">
                         {service.points.map((p, i) => (
-                          <li key={i} className="flex items-start gap-3 text-base md:text-lg text-gray-600 leading-7 whitespace-nowrap">
+                          <li key={i} className="flex items-start gap-3 text-base md:text-lg text-gray-600 leading-7 md:whitespace-nowrap">
                             <Pointer className="mt-[3px] w-4 h-4 flex-shrink-0 text-[#E67376]" strokeWidth={1.5} style={{ transform: "rotate(90deg)" }} />
                             {p}
                           </li>
