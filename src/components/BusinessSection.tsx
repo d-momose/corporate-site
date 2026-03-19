@@ -201,8 +201,6 @@ export default function BusinessSection() {
                     <span className="text-lg font-bold" style={{ color: service.headerText }}>{service.title}</span>
                   </div>
 
-                  {/* 点線区切り */}
-                  <div className="border-t-2 border-dashed border-gray-300 mx-0" />
 
                   {/* コンテンツ：画像＋テキスト */}
                   <div className={`flex flex-col md:flex-row ${service.reverse ? "md:flex-row-reverse" : ""}`}>
