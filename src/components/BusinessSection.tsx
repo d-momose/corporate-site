@@ -206,7 +206,7 @@ export default function BusinessSection() {
                   <div className={`flex flex-col md:flex-row ${service.reverse ? "md:flex-row-reverse" : ""}`}>
 
                     {/* 写真 */}
-                    <div className="md:w-2/5 flex-shrink-0 flex items-center justify-center p-4">
+                    <div className="md:w-2/5 flex-shrink-0 flex items-center justify-center p-2 md:p-3">
                       <GrayscaleReveal className="w-full relative h-52 md:h-64 rounded-xl overflow-hidden">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -219,13 +219,13 @@ export default function BusinessSection() {
                     </div>
 
                     {/* テキスト */}
-                    <div className="md:w-3/5 p-7 md:p-10 flex flex-col gap-5 justify-center">
+                    <div className="md:w-3/5 px-5 py-6 md:px-7 md:py-8 flex flex-col gap-5 justify-center">
                       <p className="text-gray-900 text-xl md:text-2xl leading-9 whitespace-pre-line" style={{ fontFamily: 'var(--font-kaisei-tokumin)', fontWeight: 800 }}>
                         {service.tagline}
                       </p>
                       <ul className="flex flex-col gap-2.5">
                         {service.points.map((p, i) => (
-                          <li key={i} className="flex items-start gap-3 text-base md:text-lg text-gray-600 leading-7">
+                          <li key={i} className="flex items-start gap-3 text-base md:text-lg text-gray-600 leading-7 whitespace-nowrap">
                             <Pointer className="mt-[3px] w-4 h-4 flex-shrink-0 text-[#E67376]" strokeWidth={1.5} style={{ transform: "rotate(90deg)" }} />
                             {p}
                           </li>
