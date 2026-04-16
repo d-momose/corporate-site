@@ -1,9 +1,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, COMPANY } from "@/lib/seo";
+
+const pageUrl = `${SITE_URL}/privacy`;
 
 export const metadata: Metadata = {
-  title: "個人情報保護方針 | Delight株式会社",
+  title: "個人情報保護方針",
   description: "Delight株式会社の個人情報保護方針をご確認いただけます。",
+  alternates: { canonical: pageUrl },
+  robots: { index: false, follow: true },
 };
 
 const sections = [
@@ -56,8 +62,18 @@ const sections = [
 ];
 
 export default function PrivacyPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "個人情報保護方針", item: pageUrl },
+    ],
+  };
+
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd} />
       {/* ─── ヒーロー ─── */}
       <section
         className="relative bg-gray-950 pt-36 pb-20"
